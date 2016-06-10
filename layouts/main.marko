@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+html lang="en"
+    head
+        title 
+            - ${data.title}
+    body
+        header class='header'
+            h1 - ${data.heading}
+            h2 - ${data.subHeading}
+            nav class='navigation navigation-header' if(notEmpty(data.navItems))
+                ul
+                    li class='navigation-item' for(navItem in data.navItems)
+                        if(navItem.id === data.activeTab)
+                            var active=true 
+                        a class=(active && 'active') href=navItem.path data-id=navItem.id
+                            - ${navItem.text}
+
+        section class=data.activeTab
+            if(data.activeTab === 'about')
+                about
+            if(data.activeTab === 'skillset')
+                skillset
+            if(data.activeTab === 'resume')
+                resume
+            if(data.activeTab === 'portfolio')
+                portfolio
+
+        footer-scripts
+            footer-scripts:script path="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+            footer-scripts:script path="/public/javascripts/navigation.js"
+            for(script in data.scripts)
+                footer-scripts:script path="${script}"
+
+        browser-refresh enabled="true"

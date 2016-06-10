@@ -1,0 +1,15 @@
+{
+    "<about>": {
+        "template": "./partials/_about.marko"
+    },
+    "<portfolio>": {
+        "template": "./partials/_portfolio.marko"
+    },
+    "<resume>": {
+        "template": "./partials/_resume.marko"
+    },
+    "<skillset>": {
+        "template": "./partials/_skillset.marko"
+    },
+    "tags-dir": "./tags"
+}

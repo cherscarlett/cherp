@@ -1,0 +1,22 @@
+[
+  {
+    "id": "about",
+    "path": "/",
+    "text": "About"
+  },
+  {
+    "id": "skillset",
+    "path": "/skillset",
+    "text": "Skillset"
+  },
+  {
+    "id": "resume",
+    "path": "/resume",
+    "text": "Resume"
+  },
+  {
+    "id": "portfolio",
+    "path": "/portfolio",
+    "text": "Portfolio"
+  }
+]
