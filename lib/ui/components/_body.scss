@@ -1,5 +1,5 @@
 body {
-    background: getProperty(primary, background-color) url(/public/images/bg.png) 50% 50% repeat;
+    background: getProperty(primary, background-color) url('#{$image-folder}bg.png') 50% 50% repeat;
     background-size: 360px 360px; 
     color: getProperty(primary, color);
 }
