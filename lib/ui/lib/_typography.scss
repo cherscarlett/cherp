@@ -1,0 +1,16 @@
+$font-size-base: 18px;
+
+html {
+    font: $font-size-base 'High Tower Text', serif;
+}
+
+@include links {
+    color: getProperty(tertiary, color);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    @include transition(color);
+}
+
+a:active, a:hover {
+    color: getProperty(primary, color);
+}

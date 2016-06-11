@@ -1,0 +1,18 @@
+// Variables 
+$transition-speed-slow: .2s;
+$transition-type-default: ease-out;
+
+// Mixins
+
+@mixin transition($types...) {
+    @if $types {
+        $transitions: unquote('');
+        @each $type in $types {
+            $transitions: append($transitions, unquote('#{$type $transition-speed-slow $transition-type-default}'), comma);
+        }
+        transition: #{$transitions};
+    }
+    @else {
+        transition: all $transition-speed-slow $transition-type-default;  
+    }
+}

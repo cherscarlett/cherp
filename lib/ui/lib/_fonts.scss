@@ -1,0 +1,31 @@
+$font-folder: $root-folder + 'fonts/';
+
+@font-face {
+    font-family: 'High Tower Text';
+        unicode-range: U+00-FFFF;
+        src: url('#{$font-folder}HighTowerText-Reg.woff2') format('woff2'), /* Super Modern Browsers */
+             url('#{$font-folder}HighTowerText-Reg.woff') format('woff'), /* Pretty Modern Browsers */
+             url('#{$font-folder}HighTowerText-Reg.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mitre Square';
+        unicode-range: U+00-FFFF;
+        src: url('#{$font-folder}MitreSquare.woff2') format('woff2'), /* Super Modern Browsers */
+             url('#{$font-folder}MitreSquare.woff') format('woff'), /* Pretty Modern Browsers */
+             url('#{$font-folder}MitreSquare.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'High Tower Text';
+        unicode-range: U+00-FFFF;
+        src: url('#{$font-folder}HighTowerText-Italic.woff2') format('woff2'), /* Super Modern Browsers */
+             url('#{$font-folder}HighTowerText-Italic.woff') format('woff'), /* Pretty Modern Browsers */
+             url('#{$font-folder}HighTowerText-Italic.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}

@@ -1,0 +1,23 @@
+$color-green: #010f0a;
+$color-green-light: #cfefd2;
+
+$color-purple: #8d81a5;
+$color-purple-light: #a493ac;
+
+$color-gray: #7e8587;
+
+$colors: (
+    primary: (
+        color: $color-green,
+        background-color: white,
+        border-color: $color-green-light
+    ),
+    secondary: (
+        color: $color-gray,
+        background-color: $color-green
+    ),
+    tertiary: (
+        color: $color-purple-light,
+        background-color: $color-purple
+    )
+)

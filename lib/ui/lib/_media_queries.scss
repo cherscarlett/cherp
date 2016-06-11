@@ -1,0 +1,21 @@
+$screen-xs: 30em;
+$screen-sm: 40em;
+$screen-md: 60em;
+$screen-lg: 68.75em;
+$screen-xl: 81.25em;
+
+$screen-sizes: (
+    mobile: 30em,
+    mobile-lg: 40em,
+    tablet: 60em,
+    desktop: 68.75em,
+    desktop-lg: 81.25em
+);
+
+@mixin break-point($type, $media-type: screen, $target-width: min-width) {
+    $screen-size: map-get($screen-sizes, $type);
+
+    @media #{$media-type} and (#{$target-width}: #{$screen-size}) {
+        @content;
+    }
+}

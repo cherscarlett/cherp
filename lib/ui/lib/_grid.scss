@@ -1,0 +1,76 @@
+// Variables
+
+$golden-ratio: 1.618;
+$base: 100%;
+
+$widths: (
+    column: (
+        lg: 10,
+        md: 9,
+        sm: 8,
+        xs: 7
+    ),
+    margin: (
+        xxl: 6,
+        xl: 5,
+        lg: 4,
+        md: 3,
+        sm: 2,
+        xs: 1
+    )
+);
+
+// Functions
+
+@function processValue($integer) {
+    $value: $base;
+    $prevValue: $base;
+
+    @for $i from 10 through $integer {
+
+        @if $i % 2 == 0 {
+            $prevValue: $value;
+            $value: $value/$golden-ratio;
+        }
+
+        @else {
+            $value: $prevValue - $value;
+        }
+    }
+
+    @return $value;
+}
+
+@function getValue($property, $size) {
+
+    @if $size == 'full' {
+        @return $base;
+    }
+
+    @else {
+        $integer: getNestedMap($widths, $property, $size);
+
+        $value: processValue($integer);
+
+        @return $value;
+    }
+
+}
+
+// Mixins
+
+@mixin grid($gutter-size:xs) {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+        flex-grow: 1;
+        padding: 0 getValue(margin, $gutter-size);
+    }
+}
+
+@mixin column($size, $gutter-size:xs) {
+    box-sizing: border-box;
+    width: getValue(column, $size);
+    padding: 0 getValue(margin, $gutter-size);
+}

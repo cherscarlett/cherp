@@ -1,0 +1,56 @@
+@mixin links($selector: "a", $states...) {
+        $at-root: false;
+
+        // check if the selector is empty, but states are passed
+        @if $selector == link or $selector == visited or $selector == hover or $selector == active or $selector == focus {
+            $states: join($selector, $states);
+            $selector:"a";
+        }
+
+        // check if the selector is extended from the parent selector
+        @if $selector != "a" {
+            $selector: #{$selector};
+            $parent: #{&};
+
+            @if str-index(quote($selector), quote($parent)) == 1 {
+                $at-root: true;
+            }
+        }
+
+        @if length($states) == 0 {
+            // default link states
+            $states: link, visited, hover, active;
+        }
+
+        // start building the list of selectors with the root selector
+
+        $links: unquote($selector);
+
+        @each $state in $states {
+
+            // iterate over the states, append the state to the selector, and append the new selector to the list of selectors
+            @if $state == link or $state == visited or $state == hover or $state == active or $selector == focus {
+                $links: append($links, unquote("#{$selector}:#{$state}"), comma);
+            }
+
+            @else {
+                @warn $state + " is not a valid anchor state.";
+            }
+        }
+
+        // add the at-root enclosure if extended from parent selector
+        @if $at-root {
+
+            @at-root {
+                #{$links} {
+                    @content;
+                }
+            }
+        }
+        @else {
+
+            #{$links} {
+                @content;
+            }
+        }
+    }
