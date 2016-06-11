@@ -18,7 +18,7 @@ function create(__helpers) {
   return function render(data, out) {
     out.w("<!DOCTYPE html><html lang=\"en\"><head><title>" +
       escapeXml(data.title) +
-      "</title></head><body><header class=\"header\"><h1>" +
+      "</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/public/stylesheets/core.css\"></head><body><header class=\"header\"><h1>" +
       escapeXml(data.heading) +
       "</h1><h2>" +
       escapeXml(data.subHeading) +
