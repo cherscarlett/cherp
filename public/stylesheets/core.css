@@ -108,9 +108,10 @@ h6 {
   background-color: rgba(255, 255, 255, 0.9); }
 
 .modal > div, .modal > nav {
-  background-color: #010f0a;
   border: 1px solid rgba(141, 129, 165, 0.5);
-  z-index: 300; }
+  z-index: 300;
+  background: #010f0a url("/public/images/bg-dark.png") 50% 50% repeat;
+  background-size: 360px 360px; }
 
 .modal-overlay {
   position: fixed;
@@ -131,7 +132,7 @@ h6 {
   z-index: 100; }
 
 body {
-  background: white url(/public/images/bg.png) 50% 50% repeat;
+  background: white url("/public/images/bg.png") 50% 50% repeat;
   background-size: 360px 360px;
   color: #010f0a; }
 

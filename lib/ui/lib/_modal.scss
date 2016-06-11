@@ -21,9 +21,10 @@
     }
 
     > div, > nav {
-        background-color: getProperty(secondary, background-color);
         border: 1px solid transparentize(getProperty(tertiary, background-color), .5);
         z-index: 300;
+        background: getProperty(secondary, background-color) url('#{$image-folder}bg-dark.png') 50% 50% repeat;
+        background-size: 360px 360px; 
     }
 
     &-overlay {
