@@ -1,13 +1,7 @@
-$screen-xs: 30em;
-$screen-sm: 40em;
-$screen-md: 60em;
-$screen-lg: 68.75em;
-$screen-xl: 81.25em;
-
 $screen-sizes: (
     mobile: 30em,
-    mobile-lg: 40em,
-    tablet: 60em,
+    tablet: 40em,
+    desktop-sm: 60em,
     desktop: 68.75em,
     desktop-lg: 81.25em
 );

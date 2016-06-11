@@ -1,0 +1,53 @@
+.modal {
+
+    @include links(& + "-close") {
+        height: 15px;
+        width: 15px;
+        mask-image: url("#{$image-folder}icon-close.svg");
+        mask-repeat: no-repeat;
+        top: 0;
+        right: 0;
+        margin: 15px 15px;
+        z-index: 300;
+        padding: 0;
+        background-color: transparentize(getProperty(secondary, color), .05);
+        position: absolute;
+        text-indent: -10000px;
+        @include transition(all);
+    }
+
+    &-close:hover, &-close:active {
+        background-color: transparentize(white, .1);
+    }
+
+    > div, > nav {
+        background-color: getProperty(secondary, background-color);
+        border: 1px solid transparentize(getProperty(tertiary, background-color), .5);
+        z-index: 300;
+    }
+
+    &-overlay {
+        position: fixed;
+        z-index: 200;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        @include break-point(tablet) {
+            display: none;
+        }
+
+        &-dark {
+            background: transparentize(black, .3);
+        }
+
+        &-light {
+            background: transparentize(white, .3);
+        }
+    }
+
+    &.is-open {
+        z-index: 100;
+    }
+}

@@ -1,6 +1,4 @@
 // Variables
-
-$golden-ratio: 1.618;
 $base: 100%;
 
 $widths: (
@@ -30,7 +28,7 @@ $widths: (
 
         @if $i % 2 == 0 {
             $prevValue: $value;
-            $value: $value/$golden-ratio;
+            $value: $value/$phi;
         }
 
         @else {

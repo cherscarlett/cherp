@@ -1,4 +1,81 @@
+// Variables
+
 $font-size-base: 18px;
+
+$font-sizes: (
+    default: 0,
+    lg: 2,
+    md: 1,
+    sm: 0,
+    xs: -1,
+    h1: 2,
+    h2: 1,
+    h3: 1,
+    h4: 0,
+    h5: 0,
+    h6: 0
+);
+
+// Functions
+
+@function getFontValue($integer) {
+
+    $prevSize: 0;
+    $size: 1rem;
+
+    @if $integer == 0 {
+        @return 1rem;
+    }
+
+    @else {
+        @for $i from 1 through $integer {
+            @if $integer > 0 {
+                $size: ($size * $phi) + $prevSize;
+            }
+
+            @else {
+                $size: ($size * $phi) - $prevSize;
+            }
+
+            $prevSize: $size;
+        } 
+
+        @return $size;
+    }
+}
+
+@function getLineHeightValue($integer) {
+
+    $prevSize: 0;
+    $size: 1.125rem;
+
+    @if $integer == 0 {
+        @return 1.125rem;
+    }
+
+    @else {
+        @for $i from 1 through $integer {
+            $size: ($size * $phi) + $prevSize;
+            $prevSize: $size;
+        } 
+
+        @return $size;
+    }
+}
+
+@function getFontSize($size) {
+    $integer: map-get($font-sizes, $size);
+
+    @return getFontValue($integer);
+}
+
+@function getLineHeight($size) {
+    $integer: map-get($font-sizes, $size);
+
+    @return getLineHeightValue($integer);
+}
+
+// Styles
 
 html {
     font: $font-size-base 'High Tower Text', serif;
@@ -13,4 +90,13 @@ html {
 
 a:active, a:hover {
     color: getProperty(primary, color);
+}
+
+$headings: h1, h2, h3, h4, h5, h6;
+
+@each $heading in $headings {
+    #{$heading} {
+        font-size: getFontSize($heading);
+        line-height: getLineHeight($heading);
+    }
 }
