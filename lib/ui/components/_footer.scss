@@ -1,0 +1,117 @@
+.footer {
+    @include border(top);
+    background: getProperty(secondary, background-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100px;
+    min-width: 320px;
+
+    > * {
+        box-sizing: border-box;
+        flex-grow: 1;
+        width: 50%;
+        max-width: map-get($screen-sizes, desktop)/2;
+        padding: getValue(margin, md);
+    }
+
+    small {
+        font-style: italic;
+        display: flex;
+        text-align: right;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size: getFontSize(xs);
+    }
+
+    @include links('.menu') {
+        height: 30px;
+        width: 30px;
+        padding: 6px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 1px solid getProperty(primary, border-color);
+        position: absolute;
+        right: getValue(margin, md);
+        margin-top: getValue(margin, md);
+        @include transition(all);
+        background-color: transparent;
+        filter: drop-shadow(0 6px 10px transparentize(black, .2));
+        
+        span {
+            text-indent: -10000px; 
+            display: block;  
+        }
+
+        &:before {
+            content: '';
+            background: getProperty(tertiary, background-color);
+            mask-image: url('#{$image-folder}icon-menu.svg');
+            height: 12px;
+            width: 12px;
+            position: absolute;
+            left: 50%;
+            margin-left: -6px;
+            top: 50%;
+            margin-top: -6px;
+            @include transition(all);
+        }
+
+        @include break-point(desktop-sm) {
+            display: none;
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    .menu:hover, .menu:active {
+        border-color: white;
+        background-color: black;
+
+        &:before {
+            background-color: white;
+        }
+    }
+
+    $icons: github, linkedin;
+
+    .social {
+        display: flex;
+        align-items: flex-end;
+
+        @each $icon in $icons {
+            .#{$icon} {
+                margin-right: 6px;
+
+                @include links {
+                    display: block;
+                    background: getProperty(tertiary, background-color);
+                    mask-image: url('#{$image-folder}icon-#{$icon}.svg');
+                    @include transition(all);
+                    text-indent: -10000px;
+                    height: 22px;
+                    width: 22px;
+                    mask-size: 22px 22px;
+                    mask-repeat: no-repeat;
+                    border: none;
+                    filter: drop-shadow(0 6px 10px transparentize(black, .2));
+                }
+
+                a:hover, a:active {
+                    background: white;
+                }
+            }
+            .github {
+                @include links {
+                    mask-size: 20px 20px;
+                    mask-position: 50% 50%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+nav class='navigation navigation-${data.location}'
+    ul
+        li class='navigation-item navigation-item-${data.location}' for(navItem in data.navItems)
+            if(navItem.id === data.activeTab)
+                var active=true 
+            a class=(active && 'active') href=navItem.path data-id=navItem.id
+                - ${navItem.text}
+                

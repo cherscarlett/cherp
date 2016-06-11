@@ -3,6 +3,8 @@
 $root-folder: '/public/';
 $image-folder: $root-folder + 'images/';
 
+$phi: 1.618034;
+
 // Functions
 
 @function getNestedMap($map, $keys...) {
@@ -16,14 +18,8 @@ $image-folder: $root-folder + 'images/';
     @return getNestedMap($colors, $prop, $properties...);
 }
 
-@function fibonacci($n) {
-  $fib: 0 1;
-  @for $i from 1 through $n {
-    $new: nth($fib, length($fib)) + nth($fib, length($fib) - 1);
-    $fib: append($fib, $new);
-  }
-  @return $fib;
-}
-
 // Mixins
 
+@mixin border($side) {
+    border-#{$side}: 4px solid getProperty(primary, border-color);
+}

@@ -5,17 +5,18 @@ html lang="en"
         title 
             - ${data.title}
         link rel="stylesheet" type="text/css" href="/public/stylesheets/core.css"
+        meta charset="utf-8"
+        meta name="lang" content="enUS"
+        meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"
+
     body
-        header class='header'
-            h1 - ${data.heading}
-            h2 - ${data.subHeading}
-            nav class='navigation navigation-header' if(notEmpty(data.navItems))
-                ul
-                    li class='navigation-item' for(navItem in data.navItems)
-                        if(navItem.id === data.activeTab)
-                            var active=true 
-                        a class=(active && 'active') href=navItem.path data-id=navItem.id
-                            - ${navItem.text}
+        header.header
+            hgroup
+                h1 - ${data.heading}
+                h2 - ${data.subHeading}
+            navigation activeTab=data.activeTab location="header" if(notEmpty(data.navItems))
+                for(navItem in data.navItems)
+                    navigation:navItem id=navItem.id text=navItem.text path=navItem.path
 
         section class=data.activeTab
             if(data.activeTab === 'about')
@@ -27,8 +28,28 @@ html lang="en"
             if(data.activeTab === 'portfolio')
                 portfolio
 
+        footer.footer
+            navigation activeTab=data.activeTab location="footer" if(notEmpty(data.navItems))
+                for(navItem in data.navItems)
+                    navigation:navItem id=navItem.id text=navItem.text path=navItem.path
+
+            ul.social
+                li.github
+                    a href="" - GitHub 
+                li.linkedin
+                    a href="" - LinkedIn
+            small.copyright
+                - Copyright &copy; 2016 Cher Stewart
+
+            a.menu data-js-action="load" href="javascript:;" data-component="navigation"
+                span - View menu
+
         footer-scripts
-            footer-scripts:script path="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+            footer-scripts:script path="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+            footer-scripts:script path="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"
+            footer-scripts:script path="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"
+            footer-scripts:script path="/public/javascripts/core.js"
+            footer-scripts:script path="/public/javascripts/modal.js"
             footer-scripts:script path="/public/javascripts/navigation.js"
             for(script in data.scripts)
                 footer-scripts:script path="${script}"

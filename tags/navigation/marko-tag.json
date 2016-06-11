@@ -1,0 +1,9 @@
+ {
+    "@activeTab": "string",
+    "@location": "string",
+    "@navItems <navItem>[]": {
+        "@id": "string",
+        "@path": "string",
+        "@text": "string"
+    }
+}

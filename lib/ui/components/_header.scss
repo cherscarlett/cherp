@@ -1,3 +1,22 @@
-header {
-    
+.header {
+    min-width: 320px;
+
+    hgroup {
+        padding: 25px getValue(margin, md) getValue(margin, md) getValue(margin, md);
+        background-image: linear-gradient(getProperty(primary, background-color), transparentize(getProperty(primary, background-color), 1));
+    }
+
+    h1 {
+        font-family: "Mitre Square";
+        color: getProperty(tertiary, color);
+        font-size: getFontSize(md);
+        line-height: getLineHeight(sm);
+    }
+
+    h2 {
+        text-transform: uppercase;
+        color: getProperty(secondary, color);
+        font-size: getFontSize(sm);
+        line-height: getLineHeight(sm);
+    }
 }

@@ -1,5 +1,14 @@
 var $trigger = $('.navigation-item a'),
-    $section;
+    $section,
+    $menuTrigger = $('.menu'),
+    $navigation = $('.navigation-footer'),
+    component = $menuTrigger.data('component');;
+
+
+var navigationModal = new Modal({
+    component: component,
+    theme: "light"
+});
 
 $trigger.on("click", function(event) {
     event.preventDefault();
@@ -14,6 +23,19 @@ $trigger.on("click", function(event) {
     item.path !== '/' ? item.title = "Cher Stewart | Software Engineer | " + $(this).html() : item.title = "Cher Stewart | Software Engineer";
 
     loadPartial(item);
+});
+
+$menuTrigger.on("click", function(event) {
+    event.preventDefault();
+
+    if (!$('.is-open').length) {
+        navigationModal.create($navigation);
+        navigationModal.open();
+    }
+    else {
+        navigationModal.close();
+    }
+
 });
 
 
