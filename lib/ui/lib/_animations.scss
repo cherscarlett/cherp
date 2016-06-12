@@ -14,6 +14,7 @@
         overflow: hidden;
         max-width: map-get($screen-sizes, desktop-sm);
         max-height: getHeightFromWidth(1.2, map-get($screen-sizes, tablet));
+        min-width: 320px;
 
         @include break-point(desktop-sm) {
             margin: auto;
@@ -66,6 +67,7 @@
     position: absolute;
     width: 100%;
     height: getHeightFromWidth(1.2, 100%);
+    min-width: 320px;
 }
 
 $svgs: balloon, low-clouds, high-clouds, birds, mountains;
@@ -86,6 +88,8 @@ $svgs: balloon, low-clouds, high-clouds, birds, mountains;
     background-repeat: repeat-x;
     width: 300%;
     animation: scroll 60s infinite;
+    max-height: 200px;
+    min-width: calc(320px*3);
 }
 
 .low-clouds {
@@ -93,20 +97,29 @@ $svgs: balloon, low-clouds, high-clouds, birds, mountains;
     height: getHeightFromWidth(4, 100vw);
     background-repeat: repeat-x;
     width: 300%;
-    animation: scroll 59s infinite;
-    background-position: 0 50%;
+    min-width: calc(320px*3);
+    animation: scroll 60s infinite;
+    max-height: 190px;
+
+    @include break-point(desktop-sm) {
+        bottom: calc(200px/3);
+    }
 }
 
 .high-clouds {
     height: getHeightFromWidth(5/2, 100vw);
     background-repeat: repeat-x;
     width: 400%;
+    min-width: calc(320px*4);
     animation: bounceyScroll 60s infinite;
     left: -200%;
+    max-height: 300px;
+    background-position: 0 50%;
 }
 
 .balloon { 
     animation: bounceyScroll 60s infinite;
+    max-height: 360px;
 }
 
 .birds {
@@ -114,6 +127,7 @@ $svgs: balloon, low-clouds, high-clouds, birds, mountains;
     right: 10%;
     top: 15%;
     height: getHeightFromWidth(149/150, 20vw);
+    background-position: 100% 50%;
 }
 
 // Keyframes

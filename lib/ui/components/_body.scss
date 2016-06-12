@@ -6,6 +6,8 @@ body {
 
 .content {
     padding: 2rem getValue(margin, md);
+    display: flex;
+    flex-wrap: wrap;
 
     @include break-point(tablet) {
         @include column(lg, md);
@@ -22,6 +24,7 @@ body {
         text-transform: uppercase;
         display: flex;
         align-items: center;
+        width: 100%;
 
         &:after {
             content: '';
@@ -33,10 +36,40 @@ body {
             transform: skew(137.507764deg);
         }
     }
+
+    &-block {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem getValue(margin, xs) 0 getValue(margin, xs);
+
+        @include break-point(mobile) {
+            padding-left: 0;
+            padding-right: getValue(margin, sm);
+            width: 50%;
+        }
+
+        @include break-point(tablet) {
+            padding-right: getValue(margin, md);
+        }
+
+        @include break-point(desktop-sm) {
+            padding-right: getValue(margin, lg);
+        }
+    }
+
+    h3 {
+        font-weight: bold;
+        font-size: getFontSize(sm);
+        line-height: getLineHeight(md);
+        color: getProperty(secondary, color);
+        text-transform: uppercase;
+    }
 }
 
 section {
     max-width: map-get($screen-sizes, desktop-sm);
+    min-width: 320px;
+
     @include break-point(desktop-sm) {
         margin: auto;
         padding: 0 getValue(margin, md);
