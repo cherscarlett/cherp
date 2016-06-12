@@ -4,6 +4,11 @@
     hgroup {
         padding: 25px getValue(margin, md) getValue(margin, md) getValue(margin, md);
         background-image: linear-gradient(getProperty(primary, background-color), transparentize(getProperty(primary, background-color), 1));
+        text-align: center;
+
+        @include break-point(tablet) {
+            text-align: left;
+        }
     }
 
     h1 {

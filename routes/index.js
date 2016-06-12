@@ -1,7 +1,8 @@
 var homeRoute = require("./home"),
     skillsetRoute = require("./skillset"),
     resumeRoute = require("./resume"),
-    portfolioRoute = require("./portfolio");
+    portfolioRoute = require("./portfolio"),
+    adminRoute = require("./admin");
 
 module.exports = function (router) {
 
@@ -41,5 +42,10 @@ module.exports = function (router) {
       path: "/animation",
       name: 'animation'
     }).get(homeRoute.animation);
+
+    router({
+      path: "/admin",
+      name: "admin"
+    }).get(adminRoute.login);
 
 };
