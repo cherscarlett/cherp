@@ -29,3 +29,13 @@ $font-folder: $root-folder + 'fonts/';
     font-weight: normal;
     font-style: italic;
 }
+
+@font-face {
+    font-family: 'High Tower Text';
+        unicode-range: U+00-FFFF;
+        src: url('#{$font-folder}HighTowerText-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+             url('#{$font-folder}HighTowerText-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+             url('#{$font-folder}HighTowerText-Bold.ttf')  format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}

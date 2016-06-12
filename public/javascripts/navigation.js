@@ -62,4 +62,7 @@ function loadPartial(item) {
 function updateContent(item) {
     $(".active").removeClass('active');
     $(item.clicked).addClass('active');
+    if ($('.is-open').length) {
+        navigationModal.close();
+    }
 }

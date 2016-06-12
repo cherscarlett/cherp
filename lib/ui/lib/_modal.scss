@@ -25,6 +25,7 @@
         z-index: 300;
         background: getProperty(secondary, background-color) url('#{$image-folder}bg-dark.png') 50% 50% repeat;
         background-size: 360px 360px; 
+        box-shadow: 0 0 8px 0 transparentize(black, .5);
     }
 
     &-overlay {
@@ -35,8 +36,8 @@
         bottom: 0;
         left: 0;
 
-        @include break-point(tablet) {
-            display: none;
+        @include break-point(desktop-sm) {
+            display: none!important;
         }
 
         &-dark {
@@ -44,7 +45,7 @@
         }
 
         &-light {
-            background: transparentize(white, .3);
+            background: transparentize(white, .15);
         }
     }
 

@@ -11,9 +11,7 @@ html lang="en"
 
     body
         header.header
-            hgroup
-                h1 - ${data.heading}
-                h2 - ${data.subHeading}
+            ui:header
             navigation activeTab=data.activeTab location="header" if(notEmpty(data.navItems))
                 for(navItem in data.navItems)
                     navigation:navItem id=navItem.id text=navItem.text path=navItem.path
@@ -32,17 +30,7 @@ html lang="en"
             navigation activeTab=data.activeTab location="footer" if(notEmpty(data.navItems))
                 for(navItem in data.navItems)
                     navigation:navItem id=navItem.id text=navItem.text path=navItem.path
-
-            ul.social
-                li.github
-                    a href="" - GitHub 
-                li.linkedin
-                    a href="" - LinkedIn
-            small.copyright
-                - Copyright &copy; 2016 Cher Stewart
-
-            a.menu data-js-action="load" href="javascript:;" data-component="navigation"
-                span - View menu
+            ui:footer
 
         footer-scripts
             footer-scripts:script path="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"

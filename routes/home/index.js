@@ -1,3 +1,4 @@
 module.exports = {
-    index: require('./main')
+    index: require('./main'),
+    animation: require('./animation')
 };

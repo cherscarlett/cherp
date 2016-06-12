@@ -1,9 +1,7 @@
 .footer {
     @include border(top);
     background: getProperty(secondary, background-color);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    position: relative;
     color: white;
     display: flex;
     justify-content: center;
@@ -99,7 +97,6 @@
                     mask-size: 22px 22px;
                     mask-repeat: no-repeat;
                     border: none;
-                    filter: drop-shadow(0 6px 10px transparentize(black, .2));
                 }
 
                 a:hover, a:active {
