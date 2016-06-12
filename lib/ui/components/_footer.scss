@@ -3,18 +3,29 @@
     background: getProperty(secondary, background-color);
     position: relative;
     color: white;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 90px;
     min-width: 320px;
 
-    > * {
-        box-sizing: border-box;
-        flex-grow: 1;
-        width: 50%;
-        max-width: map-get($screen-sizes, desktop)/2;
+    &-content {
+        max-width: map-get($screen-sizes, desktop-sm);
         padding: getValue(margin, md);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 90px;
+        box-sizing: border-box;
+
+        @include break-point(desktop-sm) {
+            margin: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+
+        > * {
+            box-sizing: border-box;
+            flex-grow: 1;
+            width: 50%;
+        }
     }
 
     small {
@@ -35,7 +46,7 @@
         border: 1px solid getProperty(primary, border-color);
         position: absolute;
         right: getValue(margin, md);
-        margin-top: getValue(margin, md);
+        margin-top: 0;
         @include transition(all);
         background-color: transparent;
         filter: drop-shadow(0 6px 10px transparentize(black, .2));

@@ -77,9 +77,11 @@ function create(__helpers) {
       });
     }
 
+    out.w("<div class=\"footer-content\">");
+
     partials__footer.render({}, out);
 
-    out.w("</footer>");
+    out.w("</div></footer>");
 
     footer_scripts({}, out, 0, function renderBody(out, footer_scripts0) {
       footer_scripts_script({

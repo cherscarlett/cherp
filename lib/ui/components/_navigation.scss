@@ -1,5 +1,5 @@
 .navigation {
-    overflow: hidden;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
 
     &-header {
@@ -77,6 +77,10 @@
                 min-width: 280px;
                 padding-top: 45px;
             }
+        }
+
+        &.is-open {
+            z-index: 300;
         }
 
         @include break-point(desktop-sm) {

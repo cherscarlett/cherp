@@ -5,7 +5,7 @@ function create(__helpers) {
       escapeXml = __helpers.x;
 
   return function render(data, out) {
-    out.w("<figure>#some kind of animation <figcaption>I has talents yay</figcaption></figure><div class=\"content content-skillset\"></div>");
+    out.w("<div class=\"content content-skillset\"><h2>Skills</h2><div class=\"content-block\"></div></div>");
   };
 }
 

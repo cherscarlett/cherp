@@ -5,9 +5,14 @@
         padding: 25px getValue(margin, md) getValue(margin, md) getValue(margin, md);
         background-image: linear-gradient(getProperty(primary, background-color), transparentize(getProperty(primary, background-color), 1));
         text-align: center;
+        max-width: map-get($screen-sizes, desktop-sm);
 
         @include break-point(tablet) {
             text-align: left;
+        }
+
+        @include break-point(desktop-sm) {
+            margin: auto;
         }
     }
 
