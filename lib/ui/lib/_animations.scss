@@ -12,6 +12,32 @@
         width: 100%;
         position: relative;
         overflow: hidden;
+        max-width: map-get($screen-sizes, desktop-sm);
+        max-height: getHeightFromWidth(1.2, map-get($screen-sizes, tablet));
+
+        @include break-point(desktop-sm) {
+            margin: auto;
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                width: getValue(margin, lg);
+                background-image: linear-gradient(to right, transparentize(getProperty(primary, background-color), 1), getProperty(primary, background-color), transparentize(getProperty(primary, background-color), 1));
+                z-index: 10;
+                height: 100%;
+            }
+
+            &:before {
+                left: 0;
+                margin-left: -#{getValue(margin, lg)/2};
+            }
+
+            &:after {
+                right: 0;
+                margin-right: -#{getValue(margin, lg)/2};
+            }
+        }
+
         svg {
             position: absolute;
         }
@@ -20,7 +46,17 @@
     figcaption {
         font-size: getFontSize(md);
         line-height: getLineHeight(md);
-        @include column(lg, md);
+        padding: 0 getValue(margin, md);
+
+        @include break-point(tablet) {
+            @include column(lg, md);
+        }
+
+        @include break-point(desktop-sm) {
+            @include column(lg);
+            padding: 0;
+        }
+
         em {
             color: getProperty(tertiary, color);
         }
@@ -58,14 +94,15 @@ $svgs: balloon, low-clouds, high-clouds, birds, mountains;
     background-repeat: repeat-x;
     width: 300%;
     animation: scroll 59s infinite;
+    background-position: 0 50%;
 }
 
 .high-clouds {
     height: getHeightFromWidth(5/2, 100vw);
     background-repeat: repeat-x;
-    width: 300%;
+    width: 400%;
     animation: bounceyScroll 60s infinite;
-    transform: translateX(-50%);
+    left: -200%;
 }
 
 .balloon { 

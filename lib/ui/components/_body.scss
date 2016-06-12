@@ -3,3 +3,42 @@ body {
     background-size: 360px 360px; 
     color: getProperty(primary, color);
 }
+
+.content {
+    padding: 2rem getValue(margin, md);
+
+    @include break-point(tablet) {
+        @include column(lg, md);
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    @include break-point(desktop-sm) {
+        @include column(lg);
+        padding: 2rem 0;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+
+        &:after {
+            content: '';
+            display: block;
+            flex-grow: 1;
+            margin-left: getValue(margin, xs);
+            height: 2px;
+            background: transparentize(getProperty(secondary, color), .5);
+            transform: skew(137.507764deg);
+        }
+    }
+}
+
+section {
+    max-width: map-get($screen-sizes, desktop-sm);
+    @include break-point(desktop-sm) {
+        margin: auto;
+        padding: 0 getValue(margin, md);
+    }
+}

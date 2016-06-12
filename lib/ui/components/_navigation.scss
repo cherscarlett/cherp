@@ -58,7 +58,7 @@
     &-modal {
         nav {
             display: block;
-            position: absolute;
+            position: fixed;
             top: calc(100vh - 20px);
             right: 20px;
             left: 20px;
