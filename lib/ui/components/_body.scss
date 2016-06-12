@@ -2,6 +2,9 @@ body {
     background: getProperty(primary, background-color) url('#{$image-folder}bg.png') 50% 50% repeat;
     background-size: 360px 360px; 
     color: getProperty(primary, color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .content {
@@ -71,6 +74,7 @@ body {
 section {
     max-width: map-get($screen-sizes, desktop-sm);
     min-width: 320px;
+    flex-grow: 1;
 
     @include break-point(desktop-sm) {
         margin: auto;

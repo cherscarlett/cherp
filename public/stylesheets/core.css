@@ -297,7 +297,12 @@ h6 {
 body {
   background: white url("/public/images/bg.png") 50% 50% repeat;
   background-size: 360px 360px;
-  color: #010f0a; }
+  color: #010f0a;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh; }
 
 .content {
   padding: 2rem 2.12862%;
@@ -360,7 +365,9 @@ body {
 
 section {
   max-width: 60em;
-  min-width: 320px; }
+  min-width: 320px;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
   @media screen and (min-width: 60em) {
     section {
       margin: auto;
@@ -371,10 +378,14 @@ section {
   .header hgroup {
     padding: 25px 2.12862% 2.12862% 2.12862%;
     background-image: linear-gradient(white, rgba(255, 255, 255, 0));
-    text-align: center; }
+    text-align: center;
+    max-width: 60em; }
     @media screen and (min-width: 40em) {
       .header hgroup {
         text-align: left; } }
+    @media screen and (min-width: 60em) {
+      .header hgroup {
+        margin: auto; } }
   .header h1 {
     font-family: "Mitre Square";
     color: #a493ac;
@@ -387,7 +398,7 @@ section {
     line-height: 1.125rem; }
 
 .navigation {
-  overflow: hidden;
+  overflow: auto;
   -webkit-overflow-scrolling: touch; }
   .navigation-header {
     border-top: 4px solid #cfefd2;
@@ -440,6 +451,8 @@ section {
       flex-direction: column;
       min-width: 280px;
       padding-top: 45px; }
+  .navigation-modal.is-open {
+    z-index: 300; }
   @media screen and (min-width: 60em) {
     .navigation-modal {
       display: none !important; } }
@@ -449,21 +462,28 @@ section {
   background: #010f0a;
   position: relative;
   color: white;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  height: 90px;
   min-width: 320px; }
-  .footer > * {
-    box-sizing: border-box;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    width: 50%;
-    max-width: 34.375em;
-    padding: 2.12862%; }
+  .footer-content {
+    max-width: 60em;
+    padding: 2.12862%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 90px;
+    box-sizing: border-box; }
+    @media screen and (min-width: 60em) {
+      .footer-content {
+        margin: auto;
+        padding-left: 0;
+        padding-right: 0; } }
+    .footer-content > * {
+      box-sizing: border-box;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      width: 50%; }
   .footer small {
     font-style: italic;
     display: -ms-flexbox;
@@ -483,7 +503,7 @@ section {
     border: 1px solid #cfefd2;
     position: absolute;
     right: 2.12862%;
-    margin-top: 2.12862%;
+    margin-top: 0;
     transition: all 0.1618s ease-out;
     background-color: transparent;
     -webkit-filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.8));

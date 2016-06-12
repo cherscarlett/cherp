@@ -30,7 +30,8 @@ html lang="en"
             navigation activeTab=data.activeTab location="footer" if(notEmpty(data.navItems))
                 for(navItem in data.navItems)
                     navigation:navItem id=navItem.id text=navItem.text path=navItem.path
-            ui:footer
+            .footer-content
+                ui:footer
 
         footer-scripts
             footer-scripts:script path="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"

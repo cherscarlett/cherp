@@ -79,6 +79,10 @@
             }
         }
 
+        &.is-open {
+            z-index: 300;
+        }
+
         @include break-point(desktop-sm) {
             display: none!important;
         }
