@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+html lang="en"
+    head
+        title 
+            - ${data.title}
+        link rel="stylesheet" type="text/css" href="/public/stylesheets/core.css"
+        link rel="stylesheet" type="text/css" href="/public/stylesheets/admin.css"
+        meta charset="utf-8"
+        meta name="lang" content="enUS"
+        meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"
+
+    body
+        header.header
+            ui:header
+            navigation activeTab=data.activeTab location="header" if(notEmpty(data.navItems))
+                for(navItem in data.navItems)
+                    navigation:navItem id=navItem.id text=navItem.text path=navItem.path
+
+        section class=data.activeTab
+            if(data.activeTab === 'login')
+                login
+            else
+                admin
+
+        footer.footer
+            navigation activeTab=data.activeTab location="footer" if(notEmpty(data.navItems))
+                for(navItem in data.navItems)
+                    navigation:navItem id=navItem.id text=navItem.text path=navItem.path
+            ui:footer
+
+        footer-scripts
+            footer-scripts:script path="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+            footer-scripts:script path="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"
+            footer-scripts:script path="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"
+            footer-scripts:script path="/public/javascripts/core.js"
+            footer-scripts:script path="/public/javascripts/modal.js"
+            footer-scripts:script path="/public/javascripts/navigation.js"
+            for(script in data.scripts)
+                footer-scripts:script path="${script}"
+
+        browser-refresh enabled="true"
