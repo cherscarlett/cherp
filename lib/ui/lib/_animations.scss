@@ -1,18 +1,101 @@
 // Variables 
-$transition-speed-slow: .1618s;
-$transition-type-default: ease-out;
 
-// Mixins
+// Styles
 
-@mixin transition($types...) {
-    @if $types {
-        $transitions: unquote('');
-        @each $type in $types {
-            $transitions: append($transitions, unquote('#{$type $transition-speed-slow $transition-type-default}'), comma);
+.animation {
+
+    &-canvas {
+        border-top: 1px solid transparentize(getProperty(secondary, color), .5);
+        box-shadow: inset 0 3px 3px -3px transparentize(getProperty(secondary, background-color), .9);
+        background: linear-gradient(transparentize(#a9ccce, .2), transparentize(white, .95));
+        height: getHeightFromWidth(1.2, 100vw);
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        svg {
+            position: absolute;
         }
-        transition: #{$transitions};
     }
-    @else {
-        transition: all $transition-speed-slow $transition-type-default;  
+
+    figcaption {
+        font-size: getFontSize(md);
+        line-height: getLineHeight(md);
+        @include column(lg, md);
+        em {
+            color: getProperty(tertiary, color);
+        }
     }
 }
+.svg-container {
+    position: absolute;
+    width: 100%;
+    height: getHeightFromWidth(1.2, 100%);
+}
+
+$svgs: balloon, low-clouds, high-clouds, birds, mountains;
+
+@each $svg in $svgs {
+
+    .#{$svg} {
+        background-image: url('#{$image-folder}#{$svg}.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+}
+
+.mountains {
+    bottom: 0;
+    height: getHeightFromWidth(300/91, 100vw);
+    background-repeat: repeat-x;
+    width: 300%;
+    animation: scroll 60s infinite;
+}
+
+.low-clouds {
+    bottom: getHeightFromWidth(300/91, 100vw)/3;
+    height: getHeightFromWidth(4, 100vw);
+    background-repeat: repeat-x;
+    width: 300%;
+    animation: scroll 59s infinite;
+}
+
+.high-clouds {
+    height: getHeightFromWidth(5/2, 100vw);
+    background-repeat: repeat-x;
+    width: 300%;
+    animation: bounceyScroll 60s infinite;
+    transform: translateX(-50%);
+}
+
+.balloon { 
+    animation: bounceyScroll 60s infinite;
+}
+
+.birds {
+    width: 20vw;
+    right: 10%;
+    top: 15%;
+    height: getHeightFromWidth(149/150, 20vw);
+}
+
+// Keyframes
+
+@keyframes scroll {
+    0% {  transform: translateX(0%); }
+    50% {  transform: translateX(-50%); }
+    100% {  transform: translateX(0%); }
+}
+
+@keyframes bounceyScroll {
+    0% { transform: translate(0%, 0%); }
+    10% { transform: translate(-10%, -3%); }
+    30% { transform: translate(-20%, 0%); }
+    50% { transform: translate(-10%, 2%); }
+    60% { transform: translate(0%, -5%); }
+    70% { transform: translate(10%, 0%); }
+    80% { transform: translate(20%, 0%); }
+    90% { transform: translate(10%, 4%); }
+    100% { transform: translate(0, 0%); }
+}
+

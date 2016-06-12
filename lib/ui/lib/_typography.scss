@@ -81,6 +81,14 @@ html {
     font: $font-size-base 'High Tower Text', serif;
 }
 
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
 @include links {
     color: getProperty(tertiary, color);
     text-decoration: none;

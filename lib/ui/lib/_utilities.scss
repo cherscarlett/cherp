@@ -5,6 +5,9 @@ $image-folder: $root-folder + 'images/';
 
 $phi: 1.618034;
 
+$transition-speed-slow: .1618s;
+$transition-type-default: ease-out;
+
 // Functions
 
 @function getNestedMap($map, $keys...) {
@@ -18,8 +21,26 @@ $phi: 1.618034;
     @return getNestedMap($colors, $prop, $properties...);
 }
 
+@function getHeightFromWidth($aspect-ratio, $width) {
+    $height: 1/($aspect-ratio) * $width;
+
+    @return $height;
+}
+
 // Mixins
 
 @mixin border($side) {
     border-#{$side}: 4px solid getProperty(primary, border-color);
+}
+@mixin transition($types...) {
+    @if $types {
+        $transitions: unquote('');
+        @each $type in $types {
+            $transitions: append($transitions, unquote('#{$type $transition-speed-slow $transition-type-default}'), comma);
+        }
+        transition: #{$transitions};
+    }
+    @else {
+        transition: all $transition-speed-slow $transition-type-default;  
+    }
 }

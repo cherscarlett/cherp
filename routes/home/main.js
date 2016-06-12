@@ -16,7 +16,7 @@ module.exports = function(req, res) {
           subHeading: 'Software Engineer',
           activeTab: 'about',
           navItems: navItems,
-          scripts: []
+          scripts: ["/public/javascripts/about.js"]
         });   
     }
 };

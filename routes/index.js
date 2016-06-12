@@ -37,4 +37,9 @@ module.exports = function (router) {
         name: "portfolioItem"
       }).get(portfolioRoute.item);
 
+    router({
+      path: "/animation",
+      name: 'animation'
+    }).get(homeRoute.animation);
+
 };

@@ -79,8 +79,8 @@
             }
         }
 
-        @include break-point(tablet) {
-            display: none;
+        @include break-point(desktop-sm) {
+            display: none!important;
         }
     }
 }

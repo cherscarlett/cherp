@@ -11,5 +11,11 @@
     "<skillset>": {
         "template": "./partials/_skillset.marko"
     },
+    "<ui:footer>": {
+        "template": "./partials/_footer.marko"
+    },
+    "<ui:header>": {
+        "template": "./partials/_header.marko"
+    },
     "tags-dir": "./tags"
 }
