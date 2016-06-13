@@ -78,7 +78,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
             }
         }
 
-        &:hover {
+        &:hover, &:active {
             border-color: black;
             transform: rotate(0);
 
@@ -119,7 +119,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover {
+            &:hover, &:active {
                 &:after {
                     top: 35px;
                 }
@@ -149,7 +149,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover {
+            &:hover, &:active {
                 &:after {
                     top: 35px;
                 }
@@ -191,7 +191,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover {
+            &:hover, &:active {
                 &:after {
                     top: 35px;
                 }
@@ -220,7 +220,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover {
+            &:hover, &:active {
                 &:after {
                     top: 35px;
                 }
@@ -269,7 +269,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover {
+            &:hover, &:active {
                 &:after {
                     top: 35px;
                 }
@@ -302,7 +302,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover {
+            &:hover, &:active {
                 &:after {
                     top: 35px;
                 }

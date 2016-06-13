@@ -552,17 +552,17 @@ section {
         width: 4px;
         border-radius: 50%;
         background: rgba(126, 133, 135, 0.8); }
-    .skill-list li:hover {
+    .skill-list li:hover, .skill-list li:active {
       border-color: black;
       transform: rotate(0); }
-      .skill-list li:hover:before {
+      .skill-list li:hover:before, .skill-list li:active:before {
         height: 30px; }
-      .skill-list li:hover:after {
+      .skill-list li:hover:after, .skill-list li:active:after {
         height: 16px;
         padding: 4px;
         padding-bottom: 0;
         bottom: 35px; }
-      .skill-list li:hover span:after {
+      .skill-list li:hover span:after, .skill-list li:active span:after {
         height: 8px;
         width: 8px;
         margin-left: -4px;
@@ -578,7 +578,7 @@ section {
         right: 0;
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="html5"]:hover:after {
+      .skill-list li[data-id="html5"]:hover:after, .skill-list li[data-id="html5"]:active:after {
         top: 35px; }
     .skill-list li[data-id="css3"] {
       left: 50%;
@@ -595,7 +595,7 @@ section {
       .skill-list li[data-id="jquery"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="jquery"]:hover:after {
+      .skill-list li[data-id="jquery"]:hover:after, .skill-list li[data-id="jquery"]:active:after {
         top: 35px; }
     .skill-list li[data-id="backbone"] {
       left: 6%;
@@ -620,7 +620,7 @@ section {
       .skill-list li[data-id="sass"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="sass"]:hover:after {
+      .skill-list li[data-id="sass"]:hover:after, .skill-list li[data-id="sass"]:active:after {
         top: 35px; }
     .skill-list li[data-id="less"] {
       left: 34%;
@@ -637,7 +637,7 @@ section {
       .skill-list li[data-id="jade"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="jade"]:hover:after {
+      .skill-list li[data-id="jade"]:hover:after, .skill-list li[data-id="jade"]:active:after {
         top: 35px; }
     .skill-list li[data-id="marko"] {
       left: 73%;
@@ -669,7 +669,7 @@ section {
       .skill-list li[data-id="python"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="python"]:hover:after {
+      .skill-list li[data-id="python"]:hover:after, .skill-list li[data-id="python"]:active:after {
         top: 35px; }
     .skill-list li[data-id="java"] {
       left: 56%;
@@ -689,7 +689,7 @@ section {
       .skill-list li[data-id="groovy"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="groovy"]:hover:after {
+      .skill-list li[data-id="groovy"]:hover:after, .skill-list li[data-id="groovy"]:active:after {
         top: 35px; }
     .skill-list li[data-id="maven"] {
       left: 87%;
