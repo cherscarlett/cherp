@@ -1,0 +1,15 @@
+if(data.type === "canvas")
+    figure.animation.animation-skills
+        .animation-canvas-skills.animation-canvas
+            canvas#animation
+        ul.skill-list if(notEmpty(data.skills))
+            for(skill in data.skills)
+                li.skill-list-item data-id=skill.id data-strength=skill.strength data-type=skill.type data-text=skill.text
+                    span - ${skill.text}
+if(data.type === "content")
+    .content-block
+        h3 - ${data.title}
+        ul.skill-set-sorted if(notEmpty(data.skills))
+            for(skill in data.skills)
+                li.skill-list-item data-id=skill.id data-strength=skill.strength data-type=skill.type data-text=skill.text
+                    span - ${skill.text}

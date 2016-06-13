@@ -1,0 +1,10 @@
+ {
+    "@type": "string",
+    "@title": "string",
+    "@skills <skill>[]": {
+        "@id": "string",
+        "@text": "string",
+        "@strength": "string",
+        "@type": "string"
+    }
+}

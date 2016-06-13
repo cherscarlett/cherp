@@ -1,0 +1,303 @@
+[
+  {
+    "id": "html5",
+    "strength": "10",
+    "text": "HTML5",
+    "type": "Markup Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "css3",
+    "strength": "10",
+    "text": "CSS3",
+    "type": "Style Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "javascript",
+    "strength": "8",
+    "text": "JavaScript",
+    "type": "OO Programming Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "jquery",
+    "strength": "8",
+    "text": "jQuery",
+    "type": "JavaScript Library",
+    "typeShort": "ux"
+  },
+  {
+    "id": "backbone",
+    "strength": "7",
+    "text": "Backbonejs",
+    "type": "MVP JavaScript Library",
+    "typeShort": "ux"
+  },
+  {
+    "id": "underscore",
+    "strength": "8",
+    "text": "Underscorejs",
+    "type": "JavaScript Library",
+    "typeShort": "ux"
+  },
+  {
+    "id": "require",
+    "strength": "7",
+    "text": "RequireJS",
+    "type": "JavaScript Module Loader",
+    "typeShort": "ux"
+  },
+  {
+    "id": "gulp",
+    "strength": "7",
+    "text": "Gulp",
+    "type": "JavaScript Task/Build Runner",
+    "typeShort": "ux"
+  },
+  {
+    "id": "sass",
+    "strength": "10",
+    "text": "SASS",
+    "type": "CSS Preprocessor",
+    "typeShort": "ux"
+  },
+  {
+    "id": "less",
+    "strength": "10",
+    "text": "LESS",
+    "type": "CSS Preprocessor",
+    "typeShort": "ux"
+  },
+  {
+    "id": "haml",
+    "strength": "10",
+    "text": "HAML",
+    "type": "Templating Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "jade",
+    "strength": "10",
+    "text": "Jade",
+    "type": "Templating Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "marko",
+    "strength": "7",
+    "text": "Marko",
+    "type": "Templating Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "freemarker",
+    "strength": "8",
+    "text": "Freemarker",
+    "type": "Templating Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "velocity",
+    "strength": "3",
+    "text": "Velocity",
+    "type": "Templating Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "django",
+    "strength": "10",
+    "text": "Django",
+    "type": "Web Application Framework",
+    "typeShort": "ux"
+  },
+  {
+    "id": "mako",
+    "strength": "5",
+    "text": "Mako",
+    "type": "Templating Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "rails",
+    "strength": "10",
+    "text": "Rails",
+    "type": "Web Application Framework",
+    "typeShort": "ux"
+  },
+  {
+    "id": "spring",
+    "strength": "4",
+    "text": "SpringSource MVC",
+    "type": "Web Application Framework",
+    "typeShort": "ux"
+  },
+  {
+    "id": "python",
+    "strength": "8",
+    "text": "Python",
+    "type": "OO Programming Language",
+    "typeShort": "server"
+  },
+  {
+    "id": "java",
+    "strength": "4",
+    "text": "JAVA",
+    "type": "OO Programming Language",
+    "typeShort": "server"
+  },
+  {
+    "id": "node",
+    "strength": "6",
+    "text": "NodeJS",
+    "type": "I/O JavaScript Platform",
+    "typeShort": "server"
+  },
+  {
+    "id": "ruby",
+    "strength": "10",
+    "text": "Ruby",
+    "type": "OO Programming Language",
+    "typeShort": "server"
+  },
+  {
+    "id": "groovy",
+    "strength": "4",
+    "text": "Groovy",
+    "type": "OO Programming Language",
+    "typeShort": "server"
+  },
+  {
+    "id": "maven",
+    "strength": "4",
+    "text": "Maven",
+    "type": "Automation Tool",
+    "typeShort": "server"
+  },
+  {
+    "id": "tomcat",
+    "strength": "4",
+    "text": "Tomcat",
+    "type": "Web Server and Servlet",
+    "typeShort": "server"
+  },
+  {
+    "id": "git",
+    "strength": "10",
+    "text": "Git",
+    "type": "Version Control System",
+    "typeShort": "server"
+  },
+  {
+    "id": "subversion",
+    "strength": "10",
+    "text": "Subversion",
+    "type": "Version Control System",
+    "typeShort": "server"
+  },
+  {
+    "id": "sql",
+    "strength": "5",
+    "text": "SQL",
+    "type": "Database Communication Language",
+    "typeShort": "server"
+  },
+  {
+    "id": "webgl",
+    "strength": "2",
+    "text": "WebGL",
+    "type": "3D Graphics",
+    "typeShort": "dev"
+  },
+  {
+    "id": "cplusplus",
+    "strength": "1",
+    "text": "C++",
+    "type": "OO Programming Language",
+    "typeShort": "dev"
+  },
+  {
+    "id": "unity",
+    "strength": "1",
+    "text": "Unity",
+    "type": "Game Engine",
+    "typeShort": "dev"
+  },
+  {
+    "id": "unreal",
+    "strength": "1",
+    "text": "Unreal Engine",
+    "type": "Game Engine",
+    "typeShort": "dev"
+  },
+  {
+    "id": "innovative",
+    "strength": "",
+    "text": "Innovative",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "ambitious",
+    "strength": "",
+    "text": "Ambitious",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "motivated",
+    "strength": "",
+    "text": "Motivated",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "creative",
+    "strength": "",
+    "text": "Creative",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "friendly",
+    "strength": "",
+    "text": "Friendly",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "passionate",
+    "strength": "",
+    "text": "Passionate",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "intuitive",
+    "strength": "",
+    "text": "Intuitive",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "empathetic",
+    "strength": "",
+    "text": "Empathetic",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "cooperative",
+    "strength": "",
+    "text": "Cooperative",
+    "type": "",
+    "typeShort": "soft"
+  },
+  {
+    "id": "positive",
+    "strength": "",
+    "text": "Positive",
+    "type": "",
+    "typeShort": "soft"
+  }
+]

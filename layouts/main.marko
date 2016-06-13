@@ -20,7 +20,23 @@ html lang="en"
             if(data.activeTab === 'about')
                 about
             if(data.activeTab === 'skillset')
-                skillset
+                skills type="canvas"
+                    for(skill in data.skills)
+                        skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
+                .content.content-skillset
+                    h2 - Skills
+                    skills type="content" title="UX Technical Skills"
+                        for(skill in data.skillsUx)
+                            skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
+                    skills type="content" title="Server-Side Skills"
+                        for(skill in data.skillsServer)
+                            skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
+                    skills type="content" title="Soft Skills"
+                        for(skill in data.skillsSoft)
+                            skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
+                    skills type="content" title="Developing Interests"
+                        for(skill in data.skillsDev)
+                            skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
             if(data.activeTab === 'resume')
                 resume
             if(data.activeTab === 'portfolio')
@@ -37,8 +53,10 @@ html lang="en"
             footer-scripts:script path="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
             footer-scripts:script path="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"
             footer-scripts:script path="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"
+            footer-scripts:script path="https://rawgit.com/akm2/simplex-noise.js/master/simplex-noise.js"
             footer-scripts:script path="/public/javascripts/core.js"
             footer-scripts:script path="/public/javascripts/modal.js"
+            footer-scripts:script path="/public/javascripts/animation.js"
             footer-scripts:script path="/public/javascripts/navigation.js"
             for(script in data.scripts)
                 footer-scripts:script path="${script}"

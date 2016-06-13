@@ -6,6 +6,7 @@
         background-image: linear-gradient(getProperty(primary, background-color), transparentize(getProperty(primary, background-color), 1));
         text-align: center;
         max-width: map-get($screen-sizes, desktop-sm);
+        -webkit-font-smoothing: antialiased;
 
         @include break-point(tablet) {
             text-align: left;

@@ -3,18 +3,54 @@
 // Styles
 
 .animation {
+    position: relative;
+    min-width: 320px;
+    max-width: map-get($screen-sizes, desktop-sm);
 
+    &-skills {
+        background-image: linear-gradient(transparentize(#EDEBDE, .1), transparentize(getProperty(primary, background-color), 1));
+        
+        &:after {
+            content: '';
+            position: absolute;
+            height: getValue(margin, md);
+            background-image: linear-gradient(transparentize(getProperty(primary, background-color), 1), getProperty(primary, background-color), transparentize(getProperty(primary, background-color), 1));
+            z-index: 10;
+            width: 100%;
+            bottom: 0;  
+            margin-bottom: -#{getValue(margin, md)/2};
+        }
+        
+        @include break-point(desktop-sm) {
+
+            &:after {
+                height: getValue(margin, lg);
+                margin-bottom: -#{getValue(margin, lg)/2};
+            }
+        }
+    }
+    
     &-canvas {
         border-top: 1px solid transparentize(getProperty(secondary, color), .5);
         box-shadow: inset 0 3px 3px -3px transparentize(getProperty(secondary, background-color), .9);
-        background: linear-gradient(transparentize(#a9ccce, .2), transparentize(white, .95));
-        height: getHeightFromWidth(1.2, 100vw);
-        width: 100%;
+        background-image: url('#{$image-folder}noise.png');
         position: relative;
         overflow: hidden;
-        max-width: map-get($screen-sizes, desktop-sm);
+        height: getHeightFromWidth(1.2, 100vw);
         max-height: getHeightFromWidth(1.2, map-get($screen-sizes, tablet));
-        min-width: 320px;
+
+        &-about {
+            background-image: url('#{$image-folder}noise.png'), linear-gradient(transparentize(#a9ccce, .2), transparentize(getProperty(primary, background-color), .95));
+        }
+
+        &-skills {  
+            
+            canvas {
+                height: 100%;
+                width: 100%;
+                opacity: .3;
+            }
+        }
 
         @include break-point(desktop-sm) {
             margin: auto;

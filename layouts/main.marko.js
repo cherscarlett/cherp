@@ -11,7 +11,8 @@ function create(__helpers) {
       navigation_navItem = __loadTag(null, "navItems", 1),
       classAttr = __helpers.ca,
       partials__about = loadTemplate(require.resolve("../partials/_about.marko")),
-      partials__skillset = loadTemplate(require.resolve("../partials/_skillset.marko")),
+      skills = __loadTag(require("../tags/skills/renderer"), 0, 0, 1),
+      skills_skill = __loadTag(null, "skills", 1),
       partials__resume = loadTemplate(require.resolve("../partials/_resume.marko")),
       partials__portfolio = loadTemplate(require.resolve("../partials/_portfolio.marko")),
       partials__footer = loadTemplate(require.resolve("../partials/_footer.marko")),
@@ -49,7 +50,78 @@ function create(__helpers) {
     }
 
     if (data.activeTab === "skillset") {
-      partials__skillset.render({}, out);
+      skills({
+          type: "canvas"
+        }, out, 0, function renderBody(out, skills0) {
+        forEach(data.skills, function(skill) {
+          skills_skill({
+              id: skill.id,
+              text: skill.text,
+              strength: skill.strength,
+              type: skill.type
+            }, out, skills0);
+        });
+      });
+
+      out.w("<div class=\"content content-skillset\"><h2>Skills</h2>");
+
+      skills({
+          type: "content",
+          title: "UX Technical Skills"
+        }, out, 0, function renderBody(out, skills1) {
+        forEach(data.skillsUx, function(skill) {
+          skills_skill({
+              id: skill.id,
+              text: skill.text,
+              strength: skill.strength,
+              type: skill.type
+            }, out, skills1);
+        });
+      });
+
+      skills({
+          type: "content",
+          title: "Server-Side Skills"
+        }, out, 0, function renderBody(out, skills2) {
+        forEach(data.skillsServer, function(skill) {
+          skills_skill({
+              id: skill.id,
+              text: skill.text,
+              strength: skill.strength,
+              type: skill.type
+            }, out, skills2);
+        });
+      });
+
+      skills({
+          type: "content",
+          title: "Soft Skills"
+        }, out, 0, function renderBody(out, skills3) {
+        forEach(data.skillsSoft, function(skill) {
+          skills_skill({
+              id: skill.id,
+              text: skill.text,
+              strength: skill.strength,
+              type: skill.type
+            }, out, skills3);
+        });
+      });
+
+      skills({
+          type: "content",
+          title: "Developing Interests"
+        }, out, 0, function renderBody(out, skills4) {
+        forEach(data.skillsDev, function(skill) {
+          skills_skill({
+              id: skill.id,
+              text: skill.text,
+              strength: skill.strength,
+              type: skill.type
+            }, out, skills4);
+        });
+      });
+
+      out.w("</div>");
     }
 
     if (data.activeTab === "resume") {
@@ -97,11 +169,19 @@ function create(__helpers) {
         }, out, footer_scripts0);
 
       footer_scripts_script({
+          path: "https://rawgit.com/akm2/simplex-noise.js/master/simplex-noise.js"
+        }, out, footer_scripts0);
+
+      footer_scripts_script({
           path: "/public/javascripts/core.js"
         }, out, footer_scripts0);
 
       footer_scripts_script({
           path: "/public/javascripts/modal.js"
+        }, out, footer_scripts0);
+
+      footer_scripts_script({
+          path: "/public/javascripts/animation.js"
         }, out, footer_scripts0);
 
       footer_scripts_script({

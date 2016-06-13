@@ -5,8 +5,7 @@ function create(__helpers) {
       escapeXml = __helpers.x;
 
   return function render(data, out) {
-    out.w("<div class=\"content content-skillset\"><h2>Skills</h2><div class=\"content-block\"></div></div>");
-  };
+      };
 }
 
 (module.exports = require("marko").c(__filename)).c(create);
