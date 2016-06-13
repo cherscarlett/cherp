@@ -69,6 +69,15 @@ body {
         color: getProperty(secondary, color);
         text-transform: uppercase;
     }
+
+    ul {
+        border-left: 2px solid getProperty(primary, border-color);
+        padding-left: getValue(margin, md);
+
+        @include break-point(tablet) {
+            padding-left: getValue(margin, lg);
+        }
+    }
 }
 
 section {
