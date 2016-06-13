@@ -383,6 +383,12 @@ body {
     line-height: 1.82029rem;
     color: #7e8587;
     text-transform: uppercase; }
+  .content ul {
+    border-left: 2px solid #cfefd2;
+    padding-left: 2.12862%; }
+    @media screen and (min-width: 40em) {
+      .content ul {
+        padding-left: 3.44419%; } }
 
 section {
   max-width: 60em;
