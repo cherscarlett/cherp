@@ -1,0 +1,339 @@
+// variables
+
+$skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, sass, less, haml, jade, marko, freemarker, velocity, django, mako, rails, spring, python, java, node, ruby, groovy, maven, tomcat, git, subversion, sql;
+
+.skill-list {
+    position: absolute;
+    top: 0;
+    height: getHeightFromWidth(1.2, 100vw);
+    max-height: getHeightFromWidth(1.2, map-get($screen-sizes, tablet));
+    width: 100%;
+    overflow: hidden;
+
+    li {
+        position: absolute;
+        border: 1px solid transparentize(getProperty(secondary, color), .5);
+        height: 12px;
+        width: 16px;
+        transform: rotate(45deg);
+        backface-visibility: hidden;
+        -webkit-font-smoothing: subpixel-antialiased;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        @include transition(all);
+        filter: drop-shadow(0 0 2px white);
+
+        &:before {
+            content: '';
+            height: 0;
+            width: 2px;
+            background: transparentize(getProperty(secondary, color), .5);
+            display: block;
+            position: absolute;
+            left: 50%;
+            margin-left: -1px;
+            bottom: 50%;
+            @include transition(all);
+        }
+
+        &:after {
+            content: attr(data-text);
+            position: absolute;
+            padding: 0;
+            bottom: 0;
+            background: transparentize(getProperty(secondary, color), .5);
+            font-size: getFontSize(xs);
+            white-space: nowrap;
+            height: 0;
+            overflow: hidden;
+            display: inline-block;
+            @include transition(all);
+            font-style: italic;
+        }
+
+        span {
+            height: 16px;
+            width: 12px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 1px;
+            top: -3px;
+            display: block;
+            text-indent: -10000px;
+            border: inherit;
+
+            &:after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -2px;
+                margin-top: -2px;
+                content: '';
+                height: 4px;
+                width: 4px;
+                border-radius: 50%;
+                background: transparentize(getProperty(secondary, color), .2);
+            }
+        }
+
+        &:hover {
+            border-color: black;
+            transform: rotate(0);
+
+            &:before {
+                height: 30px;
+            }
+
+            &:after {
+                height: 16px;
+                padding: 4px;
+                padding-bottom: 0;
+                bottom: 35px;
+            }
+
+            span {
+                &:after {
+                    height: 8px;
+                    width: 8px;
+                    margin-left: -4px;
+                    margin-top: -4px;
+                    background-color: black;
+                }
+            }
+        }
+
+        &[data-id="html5"] {
+            left: 90%;
+            top: 11%; 
+
+            &:before {
+                top: 50%;
+                bottom: auto;
+            }
+
+            &:after {
+                right: 0;
+                top: 0;
+                bottom: auto;
+            }
+
+            &:hover {
+                &:after {
+                    top: 35px;
+                }
+            }
+
+        }
+
+        &[data-id="css3"] {
+            left: 50%;
+            top: 18%; }
+
+        &[data-id="javascript"] {
+            left: 63%;
+            top: 35%; }
+
+        &[data-id="jquery"] {
+            left: 70%;
+            top: 6%; 
+
+            &:before {
+                top: 50%;
+                bottom: auto;
+            }
+
+            &:after {
+                top: 0;
+                bottom: auto;
+            }
+
+            &:hover {
+                &:after {
+                    top: 35px;
+                }
+            }
+        }
+
+        &[data-id="backbone"] {
+            left: 6%;
+            top: 88%; }
+
+        &[data-id="underscore"] {
+            left: 88%;
+            top: 82%; 
+
+            &:after {
+                right: 0;
+            }
+        }
+
+        &[data-id="require"] {
+            left: 43%;
+            top: 51%; }
+
+        &[data-id="gulp"] {
+             left: 44%;
+             top: 66%; }
+
+        &[data-id="sass"] {
+            left: 38%;
+            top: 9%; 
+
+            &:before {
+                top: 50%;
+                bottom: auto;
+            }
+
+            &:after {
+                top: 0;
+                bottom: auto;
+            }
+
+            &:hover {
+                &:after {
+                    top: 35px;
+                }
+            }
+        }
+
+        &[data-id="less"] {
+            left: 34%;
+            top: 48%; }
+
+        &[data-id="haml"] {
+            left: 34%;
+            top: 38%; }
+
+        &[data-id="jade"] {
+            left: 27%;
+            top: 3%; 
+
+            &:before {
+                top: 50%;
+                bottom: auto;
+            }
+
+            &:after {
+                top: 0;
+                bottom: auto;
+            }
+
+            &:hover {
+                &:after {
+                    top: 35px;
+                }
+            }
+        }
+
+        &[data-id="marko"] {
+            left: 73%;
+            top: 24%; }
+
+        &[data-id="freemarker"] {
+            left: 17%;
+            top: 62%; }
+
+        &[data-id="velocity"] {
+            left: 4%;
+            top: 48%; }
+
+        &[data-id="django"] {
+            left: 77%;
+            top: 54%; }
+
+        &[data-id="mako"] {
+            left: 27%;
+            top: 25%; }
+
+        &[data-id="rails"] {
+            left: 36%;
+            top: 75%; }
+
+        &[data-id="spring"] {
+            left: 44%;
+            top: 29%; }
+
+        &[data-id="python"] {
+            left: 53%;
+            top: 6%; 
+
+            &:before {
+                top: 50%;
+                bottom: auto;
+            }
+
+            &:after {
+                top: 0;
+                bottom: auto;
+            }
+
+            &:hover {
+                &:after {
+                    top: 35px;
+                }
+            }
+        }
+
+        &[data-id="java"] {
+            left: 56%;
+            top: 79%; }
+
+        &[data-id="node"] {
+            left: 64%;
+            top: 74%; }
+
+        &[data-id="ruby"] {
+            left: 10%;
+            top: 24%; }
+
+        &[data-id="groovy"] {
+            left: 14%;
+            top: 11%; 
+
+            &:before {
+                top: 50%;
+                bottom: auto;
+            }
+
+            &:after {
+                top: 0;
+                bottom: auto;
+            }
+
+            &:hover {
+                &:after {
+                    top: 35px;
+                }
+            }
+        }
+
+        &[data-id="maven"] {
+            left: 87%;
+            top: 36%; 
+
+            &:after {
+                right: 0;
+            }
+        }
+
+        &[data-id="tomcat"] {
+            left: 27%;
+            top: 78%; }
+
+        &[data-id="git"] {
+            left: 3%;
+            top: 19%; }
+
+        &[data-id="subversion"] {
+            left: 61%;
+            top: 51%; }
+
+        &[data-id="sql"] {
+            left: 18%;
+            top: 42%; }
+
+    }
+}
+

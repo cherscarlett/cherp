@@ -100,53 +100,74 @@ h6 {
   font-size: 1rem;
   line-height: 1.125rem; }
 
-.animation-canvas {
-  border-top: 1px solid rgba(126, 133, 135, 0.5);
-  box-shadow: inset 0 3px 3px -3px rgba(1, 15, 10, 0.1);
-  background: linear-gradient(rgba(169, 204, 206, 0.8), rgba(255, 255, 255, 0.05));
-  height: 83.33333vw;
-  width: 100%;
+.animation {
   position: relative;
-  overflow: hidden;
-  max-width: 60em;
-  max-height: 33.33333em;
-  min-width: 320px; }
-  @media screen and (min-width: 60em) {
-    .animation-canvas {
-      margin: auto; }
-      .animation-canvas:before, .animation-canvas:after {
-        content: '';
-        position: absolute;
-        width: 3.44419%;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
-        z-index: 10;
-        height: 100%; }
-      .animation-canvas:before {
-        left: 0;
-        margin-left: -1.72209%; }
-      .animation-canvas:after {
-        right: 0;
-        margin-right: -1.72209%; } }
-  .animation-canvas svg {
-    position: absolute; }
-
-.animation figcaption {
-  font-size: 1.61803rem;
-  line-height: 1.82029rem;
-  padding: 0 2.12862%; }
-  @media screen and (min-width: 40em) {
-    .animation figcaption {
-      box-sizing: border-box;
-      width: 61.8034%;
-      padding: 0 2.12862%; } }
-  @media screen and (min-width: 60em) {
-    .animation figcaption {
-      box-sizing: border-box;
-      width: 61.8034%;
-      padding: 0 0.81306%;
-      padding: 0; } }
-  .animation figcaption em {
-    color: #a493ac; }
+  min-width: 320px;
+  max-width: 60em; }
+  .animation-skills {
+    background-image: linear-gradient(rgba(237, 235, 222, 0.9), rgba(255, 255, 255, 0)); }
+    .animation-skills:after {
+      content: '';
+      position: absolute;
+      height: 2.12862%;
+      background-image: linear-gradient(rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
+      z-index: 10;
+      width: 100%;
+      bottom: 0;
+      margin-bottom: -1.06431%; }
+    @media screen and (min-width: 60em) {
+      .animation-skills:after {
+        height: 3.44419%;
+        margin-bottom: -1.72209%; } }
+  .animation-canvas {
+    border-top: 1px solid rgba(126, 133, 135, 0.5);
+    box-shadow: inset 0 3px 3px -3px rgba(1, 15, 10, 0.1);
+    background-image: url("/public/images/noise.png");
+    position: relative;
+    overflow: hidden;
+    height: 83.33333vw;
+    max-height: 33.33333em; }
+    .animation-canvas-about {
+      background-image: url("/public/images/noise.png"), linear-gradient(rgba(169, 204, 206, 0.8), rgba(255, 255, 255, 0.05)); }
+    .animation-canvas-skills canvas {
+      height: 100%;
+      width: 100%;
+      opacity: .3; }
+    @media screen and (min-width: 60em) {
+      .animation-canvas {
+        margin: auto; }
+        .animation-canvas:before, .animation-canvas:after {
+          content: '';
+          position: absolute;
+          width: 3.44419%;
+          background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
+          z-index: 10;
+          height: 100%; }
+        .animation-canvas:before {
+          left: 0;
+          margin-left: -1.72209%; }
+        .animation-canvas:after {
+          right: 0;
+          margin-right: -1.72209%; } }
+    .animation-canvas svg {
+      position: absolute; }
+  .animation figcaption {
+    font-size: 1.61803rem;
+    line-height: 1.82029rem;
+    padding: 0 2.12862%; }
+    @media screen and (min-width: 40em) {
+      .animation figcaption {
+        box-sizing: border-box;
+        width: 61.8034%;
+        padding: 0 2.12862%; } }
+    @media screen and (min-width: 60em) {
+      .animation figcaption {
+        box-sizing: border-box;
+        width: 61.8034%;
+        padding: 0 0.81306%;
+        padding: 0; } }
+    .animation figcaption em {
+      color: #a493ac; }
 
 .svg-container {
   position: absolute;
@@ -379,7 +400,8 @@ section {
     padding: 25px 2.12862% 2.12862% 2.12862%;
     background-image: linear-gradient(white, rgba(255, 255, 255, 0));
     text-align: center;
-    max-width: 60em; }
+    max-width: 60em;
+    -webkit-font-smoothing: antialiased; }
     @media screen and (min-width: 40em) {
       .header hgroup {
         text-align: left; } }
@@ -456,6 +478,230 @@ section {
   @media screen and (min-width: 60em) {
     .navigation-modal {
       display: none !important; } }
+
+.skill-list {
+  position: absolute;
+  top: 0;
+  height: 83.33333vw;
+  max-height: 33.33333em;
+  width: 100%;
+  overflow: hidden; }
+  .skill-list li {
+    position: absolute;
+    border: 1px solid rgba(126, 133, 135, 0.5);
+    height: 12px;
+    width: 16px;
+    transform: rotate(45deg);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: all 0.1618s ease-out;
+    -webkit-filter: drop-shadow(0 0 2px white);
+    filter: drop-shadow(0 0 2px white); }
+    .skill-list li:before {
+      content: '';
+      height: 0;
+      width: 2px;
+      background: rgba(126, 133, 135, 0.5);
+      display: block;
+      position: absolute;
+      left: 50%;
+      margin-left: -1px;
+      bottom: 50%;
+      transition: all 0.1618s ease-out; }
+    .skill-list li:after {
+      content: attr(data-text);
+      position: absolute;
+      padding: 0;
+      bottom: 0;
+      background: rgba(126, 133, 135, 0.5);
+      font-size: 0.61803rem;
+      white-space: nowrap;
+      height: 0;
+      overflow: hidden;
+      display: inline-block;
+      transition: all 0.1618s ease-out;
+      font-style: italic; }
+    .skill-list li span {
+      height: 16px;
+      width: 12px;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 1px;
+      top: -3px;
+      display: block;
+      text-indent: -10000px;
+      border: inherit; }
+      .skill-list li span:after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -2px;
+        margin-top: -2px;
+        content: '';
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background: rgba(126, 133, 135, 0.8); }
+    .skill-list li:hover {
+      border-color: black;
+      transform: rotate(0); }
+      .skill-list li:hover:before {
+        height: 30px; }
+      .skill-list li:hover:after {
+        height: 16px;
+        padding: 4px;
+        padding-bottom: 0;
+        bottom: 35px; }
+      .skill-list li:hover span:after {
+        height: 8px;
+        width: 8px;
+        margin-left: -4px;
+        margin-top: -4px;
+        background-color: black; }
+    .skill-list li[data-id="html5"] {
+      left: 90%;
+      top: 11%; }
+      .skill-list li[data-id="html5"]:before {
+        top: 50%;
+        bottom: auto; }
+      .skill-list li[data-id="html5"]:after {
+        right: 0;
+        top: 0;
+        bottom: auto; }
+      .skill-list li[data-id="html5"]:hover:after {
+        top: 35px; }
+    .skill-list li[data-id="css3"] {
+      left: 50%;
+      top: 18%; }
+    .skill-list li[data-id="javascript"] {
+      left: 63%;
+      top: 35%; }
+    .skill-list li[data-id="jquery"] {
+      left: 70%;
+      top: 6%; }
+      .skill-list li[data-id="jquery"]:before {
+        top: 50%;
+        bottom: auto; }
+      .skill-list li[data-id="jquery"]:after {
+        top: 0;
+        bottom: auto; }
+      .skill-list li[data-id="jquery"]:hover:after {
+        top: 35px; }
+    .skill-list li[data-id="backbone"] {
+      left: 6%;
+      top: 88%; }
+    .skill-list li[data-id="underscore"] {
+      left: 88%;
+      top: 82%; }
+      .skill-list li[data-id="underscore"]:after {
+        right: 0; }
+    .skill-list li[data-id="require"] {
+      left: 43%;
+      top: 51%; }
+    .skill-list li[data-id="gulp"] {
+      left: 44%;
+      top: 66%; }
+    .skill-list li[data-id="sass"] {
+      left: 38%;
+      top: 9%; }
+      .skill-list li[data-id="sass"]:before {
+        top: 50%;
+        bottom: auto; }
+      .skill-list li[data-id="sass"]:after {
+        top: 0;
+        bottom: auto; }
+      .skill-list li[data-id="sass"]:hover:after {
+        top: 35px; }
+    .skill-list li[data-id="less"] {
+      left: 34%;
+      top: 48%; }
+    .skill-list li[data-id="haml"] {
+      left: 34%;
+      top: 38%; }
+    .skill-list li[data-id="jade"] {
+      left: 27%;
+      top: 3%; }
+      .skill-list li[data-id="jade"]:before {
+        top: 50%;
+        bottom: auto; }
+      .skill-list li[data-id="jade"]:after {
+        top: 0;
+        bottom: auto; }
+      .skill-list li[data-id="jade"]:hover:after {
+        top: 35px; }
+    .skill-list li[data-id="marko"] {
+      left: 73%;
+      top: 24%; }
+    .skill-list li[data-id="freemarker"] {
+      left: 17%;
+      top: 62%; }
+    .skill-list li[data-id="velocity"] {
+      left: 4%;
+      top: 48%; }
+    .skill-list li[data-id="django"] {
+      left: 77%;
+      top: 54%; }
+    .skill-list li[data-id="mako"] {
+      left: 27%;
+      top: 25%; }
+    .skill-list li[data-id="rails"] {
+      left: 36%;
+      top: 75%; }
+    .skill-list li[data-id="spring"] {
+      left: 44%;
+      top: 29%; }
+    .skill-list li[data-id="python"] {
+      left: 53%;
+      top: 6%; }
+      .skill-list li[data-id="python"]:before {
+        top: 50%;
+        bottom: auto; }
+      .skill-list li[data-id="python"]:after {
+        top: 0;
+        bottom: auto; }
+      .skill-list li[data-id="python"]:hover:after {
+        top: 35px; }
+    .skill-list li[data-id="java"] {
+      left: 56%;
+      top: 79%; }
+    .skill-list li[data-id="node"] {
+      left: 64%;
+      top: 74%; }
+    .skill-list li[data-id="ruby"] {
+      left: 10%;
+      top: 24%; }
+    .skill-list li[data-id="groovy"] {
+      left: 14%;
+      top: 11%; }
+      .skill-list li[data-id="groovy"]:before {
+        top: 50%;
+        bottom: auto; }
+      .skill-list li[data-id="groovy"]:after {
+        top: 0;
+        bottom: auto; }
+      .skill-list li[data-id="groovy"]:hover:after {
+        top: 35px; }
+    .skill-list li[data-id="maven"] {
+      left: 87%;
+      top: 36%; }
+      .skill-list li[data-id="maven"]:after {
+        right: 0; }
+    .skill-list li[data-id="tomcat"] {
+      left: 27%;
+      top: 78%; }
+    .skill-list li[data-id="git"] {
+      left: 3%;
+      top: 19%; }
+    .skill-list li[data-id="subversion"] {
+      left: 61%;
+      top: 51%; }
+    .skill-list li[data-id="sql"] {
+      left: 18%;
+      top: 42%; }
 
 .footer {
   border-top: 4px solid #cfefd2;

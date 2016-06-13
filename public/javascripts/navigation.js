@@ -56,6 +56,14 @@ function loadPartial(item) {
 
         $section.addClass(item.id).html(data);
 
+        if (item.id === 'about') {
+            loadSvgs(['wind'], $('.animation-canvas'));
+        }
+
+        if (item.id === 'skillset') {
+            initSkills();
+        }
+
     });
 }
 
