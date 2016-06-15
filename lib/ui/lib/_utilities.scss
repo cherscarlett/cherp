@@ -44,3 +44,24 @@ $transition-type-default: ease-out;
         transition: all $transition-speed-slow $transition-type-default;  
     }
 }
+
+@mixin center($position, $sides...) {
+    position: $position;
+
+
+    $x: 0;
+    $y: 0;
+
+    @each $side in $sides {
+        @if $side == top {
+            $y: -50%;
+        }
+        @if $side == left {
+            $x: -50%;
+        }
+
+        #{$side}: 50%;
+    }
+    
+    transform: translate3d($x, $y, 0); 
+}

@@ -1,12 +1,15 @@
 var navItems = require('../../private/menu.json'),
     layout = require('../../layouts/main.marko'),
-    ajax = require('../../partials/_resume.marko');
+    ajax = require('../../partials/_resume.marko'),
+    resumes = require('../../private/resume.json');
 
 module.exports = function(req, res) {
+
     if (req.query.ajax) {
         res.marko(ajax, {
             title: 'Cher Stewart | Software Engineer | Resume',
-            activeTab: 'resume'
+            activeTab: 'resume',
+            resumes: resumes
         });
     }
     else {
@@ -15,7 +18,8 @@ module.exports = function(req, res) {
           heading: 'Cher Stewart',
           subHeading: 'Software Engineer',
           activeTab: 'resume',
-          navItems: navItems
+          navItems: navItems,
+          resumes: resumes
         });
     }
 };

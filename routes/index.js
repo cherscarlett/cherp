@@ -2,7 +2,9 @@ var homeRoute = require("./home"),
     skillsetRoute = require("./skillset"),
     resumeRoute = require("./resume"),
     portfolioRoute = require("./portfolio"),
-    adminRoute = require("./admin");
+    adminRoute = require("./admin"),
+    bodyParser= require('body-parser'),
+    methodOverride = require('method-override');
 
 module.exports = function (router) {
 
@@ -43,9 +45,29 @@ module.exports = function (router) {
       name: 'animation'
     }).get(homeRoute.animation);
 
+    router.use(bodyParser.urlencoded({ extended: true }));
+
+    router.use(methodOverride(function(req, res){
+        if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+
+            var method = req.body._method;
+            delete req.body._method;
+            return method;
+        }
+    }));
+
     router({
       path: "/admin",
       name: "admin"
-    }).get(adminRoute.login);
+    }).get(adminRoute.index);
+
+    router({
+      path: "/admin/portfolio/:id",
+      name: "viewPortfolioItem"
+    }).get(adminRoute.portfolio.view);
+
+    router.post("/admin/portfolio/update/:id", adminRoute.portfolio.update);
+    router.post("/admin/portfolio/create/:id", adminRoute.portfolio.create);
+    router.post("/admin/portfolio/delete/:id", adminRoute.portfolio.delete);
 
 };

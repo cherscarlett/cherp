@@ -1,17 +1,17 @@
 skills type="canvas"
-    for(skill in data.skills)
+    for(skill in data.skills.all)
         skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
 .content.content-skillset
     h2 - Skills
     skills type="content" title="UX Technical Skills"
-        for(skill in data.skillsUx)
+        for(skill in data.skills.ux)
             skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
     skills type="content" title="Server-Side Skills"
-        for(skill in data.skillsServer)
+        for(skill in data.skills.server)
             skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
     skills type="content" title="Soft Skills"
-        for(skill in data.skillsSoft)
+        for(skill in data.skills.soft)
             skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
     skills type="content" title="Developing Interests"
-        for(skill in data.skillsDev)
+        for(skill in data.skills.dev)
             skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type

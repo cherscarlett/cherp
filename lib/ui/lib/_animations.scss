@@ -54,26 +54,34 @@
 
         @include break-point(desktop-sm) {
             margin: auto;
+        }
 
-            &:before, &:after {
+        &:before, &:after {
+
+            @include break-point(desktop-sm) {
                 content: '';
                 position: absolute;
-                width: getValue(margin, lg);
+                width: getValue(margin, xxl);
                 background-image: linear-gradient(to right, transparentize(getProperty(primary, background-color), 1), getProperty(primary, background-color), transparentize(getProperty(primary, background-color), 1));
                 z-index: 10;
                 height: 100%;
             }
+        }
 
-            &:before {
+        &:before {
+            @include break-point(desktop-sm) {
                 left: 0;
-                margin-left: -#{getValue(margin, lg)/2};
-            }
-
-            &:after {
-                right: 0;
-                margin-right: -#{getValue(margin, lg)/2};
+                margin-left: -#{getValue(margin, xxl)/2};
             }
         }
+
+        &:after {
+            @include break-point(desktop-sm) {  
+                right: 0;
+                margin-right: -#{getValue(margin, xxl)/2};
+            }
+        }
+        
 
         svg {
             position: absolute;

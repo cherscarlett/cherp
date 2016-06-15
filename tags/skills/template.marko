@@ -4,7 +4,7 @@ if(data.type === "canvas")
             canvas#animation
         ul.skill-list if(notEmpty(data.skills))
             for(skill in data.skills)
-                li.skill-list-item data-id=skill.id data-strength=skill.strength data-type=skill.type data-text=skill.text
+                li.skill-list-item data-id=skill.id data-strength=skill.strength data-type=skill.type data-text=skill.text tabindex="100"
                     span - ${skill.text}
 if(data.type === "content")
     .content-block

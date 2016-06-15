@@ -1,0 +1,8 @@
+{
+    "@resumes <resume>[]": {
+        "@type": "string",
+        "@heading": "string",
+        "@resumeItems <resumeItem[]": {
+        }
+    }
+}
