@@ -62,11 +62,7 @@
             mask-image: url('#{$image-folder}icon-menu.svg');
             height: 12px;
             width: 12px;
-            position: absolute;
-            left: 50%;
-            margin-left: -6px;
-            top: 50%;
-            margin-top: -6px;
+            @include center(absolute, top, left);
             @include transition(all);
         }
 
@@ -110,7 +106,7 @@
                     border: none;
                 }
 
-                a:hover, a:active {
+                a:hover, a:active, a:focus {
                     background: white;
                 }
             }

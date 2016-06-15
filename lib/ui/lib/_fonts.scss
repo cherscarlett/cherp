@@ -5,7 +5,8 @@ $font-folder: $root-folder + 'fonts/';
         unicode-range: U+00-FFFF;
         src: url('#{$font-folder}HighTowerText-Reg.woff2') format('woff2'), /* Super Modern Browsers */
              url('#{$font-folder}HighTowerText-Reg.woff') format('woff'), /* Pretty Modern Browsers */
-             url('#{$font-folder}HighTowerText-Reg.ttf')  format('truetype');
+             url('#{$font-folder}HighTowerText-Reg.ttf')  format('truetype'),
+             url('#{$font-folder}HighTowerText-Reg.svg')  format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -15,7 +16,8 @@ $font-folder: $root-folder + 'fonts/';
         unicode-range: U+00-FFFF;
         src: url('#{$font-folder}MitreSquare.woff2') format('woff2'), /* Super Modern Browsers */
              url('#{$font-folder}MitreSquare.woff') format('woff'), /* Pretty Modern Browsers */
-             url('#{$font-folder}MitreSquare.ttf')  format('truetype');
+             url('#{$font-folder}MitreSquare.ttf')  format('truetype'),
+             url('#{$font-folder}MitreSquare.ttf')  format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -25,7 +27,8 @@ $font-folder: $root-folder + 'fonts/';
         unicode-range: U+00-FFFF;
         src: url('#{$font-folder}HighTowerText-Italic.woff2') format('woff2'), /* Super Modern Browsers */
              url('#{$font-folder}HighTowerText-Italic.woff') format('woff'), /* Pretty Modern Browsers */
-             url('#{$font-folder}HighTowerText-Italic.ttf')  format('truetype');
+             url('#{$font-folder}HighTowerText-Italic.ttf')  format('truetype'),
+             url('#{$font-folder}HighTowerText-Italic.svg')  format('svg');
     font-weight: normal;
     font-style: italic;
 }
@@ -35,7 +38,8 @@ $font-folder: $root-folder + 'fonts/';
         unicode-range: U+00-FFFF;
         src: url('#{$font-folder}HighTowerText-Bold.woff2') format('woff2'), /* Super Modern Browsers */
              url('#{$font-folder}HighTowerText-Bold.woff') format('woff'), /* Pretty Modern Browsers */
-             url('#{$font-folder}HighTowerText-Bold.ttf')  format('truetype');
+             url('#{$font-folder}HighTowerText-Bold.ttf')  format('truetype')
+             url('#{$font-folder}HighTowerText-Bold.svg')  format('svg');
     font-weight: bold;
     font-style: normal;
 }

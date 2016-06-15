@@ -5,6 +5,7 @@ html lang="en"
         title 
             - ${data.title}
         link rel="stylesheet" type="text/css" href="/public/stylesheets/core.css"
+        link rel="icon" href="/public/favicon.png" sizes="64x64" type="image/png"
         meta charset="utf-8"
         meta name="lang" content="enUS"
         meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes"
@@ -19,26 +20,15 @@ html lang="en"
         section class=data.activeTab
             if(data.activeTab === 'about')
                 about
+
             if(data.activeTab === 'skillset')
-                skills type="canvas"
-                    for(skill in data.skills)
-                        skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
-                .content.content-skillset
-                    h2 - Skills
-                    skills type="content" title="UX Technical Skills"
-                        for(skill in data.skillsUx)
-                            skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
-                    skills type="content" title="Server-Side Skills"
-                        for(skill in data.skillsServer)
-                            skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
-                    skills type="content" title="Soft Skills"
-                        for(skill in data.skillsSoft)
-                            skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
-                    skills type="content" title="Developing Interests"
-                        for(skill in data.skillsDev)
-                            skills:skill id=skill.id text=skill.text strength=skill.strength type=skill.type
+                include('../partials/_skillset-full') skills=data.skills
+
             if(data.activeTab === 'resume')
-                resume
+                resumes
+                    for(resume in data.resumes)
+                        resumes:resume heading=resume.heading type=resume.type resumeItems=resume.resumeItems
+
             if(data.activeTab === 'portfolio')
                 portfolio
 
@@ -59,6 +49,6 @@ html lang="en"
             footer-scripts:script path="/public/javascripts/animation.js"
             footer-scripts:script path="/public/javascripts/navigation.js"
             for(script in data.scripts)
-                footer-scripts:script path="${script}"
+                footer-scripts:script path=script
 
         browser-refresh enabled="true"

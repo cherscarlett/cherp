@@ -29,9 +29,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
             width: 2px;
             background: transparentize(getProperty(secondary, color), .5);
             display: block;
-            position: absolute;
-            left: 50%;
-            margin-left: -1px;
+            @include center(absolute, left);
             bottom: 50%;
             @include transition(all);
         }
@@ -65,20 +63,16 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
 
             &:after {
                 display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-left: -2px;
-                margin-top: -2px;
                 content: '';
                 height: 4px;
                 width: 4px;
                 border-radius: 50%;
                 background: transparentize(getProperty(secondary, color), .2);
+                @include center(absolute, top, left);
             }
         }
 
-        &:hover, &:active {
+        &:hover, &:active, &:focus {
             border-color: black;
             transform: rotate(0);
 
@@ -97,8 +91,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 &:after {
                     height: 8px;
                     width: 8px;
-                    margin-left: -4px;
-                    margin-top: -4px;
+                    transform: translate3d(-50%,-50%,0);
                     background-color: black;
                 }
             }
@@ -119,7 +112,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 &:after {
                     top: 35px;
                 }
@@ -149,7 +142,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 &:after {
                     top: 35px;
                 }
@@ -191,7 +184,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 &:after {
                     top: 35px;
                 }
@@ -220,7 +213,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 &:after {
                     top: 35px;
                 }
@@ -269,7 +262,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 &:after {
                     top: 35px;
                 }
@@ -302,7 +295,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
                 bottom: auto;
             }
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 &:after {
                     top: 35px;
                 }

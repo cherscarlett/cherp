@@ -1,22 +1,22 @@
 var navItems = require('../../private/menu.json'),
     layout = require('../../layouts/main.marko'),
     ajax = require('../../partials/_skillset-full.marko'),
-    skills = require('../../private/skills.json')
-    skillsUx = sortSkills('ux'),
-    skillsServer = sortSkills('server'),
-    skillsDev = sortSkills('dev'),
-    skillsSoft = sortSkills('soft');
+    skillsAll = require('../../private/skills.json'),
+    skills = {
+        all: sortSkills('all'),
+        ux: sortSkills('ux'),
+        server: sortSkills('server'),
+        dev: sortSkills('dev'),
+        soft: sortSkills('soft')
+    };
 
 module.exports = function(req, res) {
+
     if (req.query.ajax) {
         res.marko(ajax, {
             title: 'Cher Stewart | Software Engineer | Skillset',
             activeTab: 'skillset',
-            skills: sortSkills('all'),
-            skillsUx: skillsUx,
-            skillsServer: skillsServer,
-            skillsDev: skillsDev,
-            skillsSoft: skillsSoft
+            skills: skills
         });
     }
     else {
@@ -26,11 +26,7 @@ module.exports = function(req, res) {
           subHeading: 'Software Engineer',
           activeTab: 'skillset',
           navItems: navItems,
-          skills: sortSkills('all'),
-          skillsUx: skillsUx,
-          skillsServer: skillsServer,
-          skillsDev: skillsDev,
-          skillsSoft: skillsSoft
+          skills: skills
         });
     }
 };
@@ -38,8 +34,8 @@ module.exports = function(req, res) {
 function sortSkills(type) {
   var skillsSorted = [];
 
-  for(var i = 0; i < skills.length; i++) {
-    var skill = skills[i];
+  for(var i = 0; i < skillsAll.length; i++) {
+    var skill = skillsAll[i];
 
     if (skill.typeShort === type) {
       skillsSorted.push(skill);

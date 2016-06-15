@@ -11,9 +11,9 @@ function create(__helpers) {
       navigation_navItem = __loadTag(null, "navItems", 1),
       classAttr = __helpers.ca,
       partials__about = loadTemplate(require.resolve("../partials/_about.marko")),
-      skills = __loadTag(require("../tags/skills/renderer"), 0, 0, 1),
-      skills_skill = __loadTag(null, "skills", 1),
-      partials__resume = loadTemplate(require.resolve("../partials/_resume.marko")),
+      partials__skillset_full = loadTemplate(require.resolve("../partials/_skillset-full")),
+      resumes = __loadTag(require("../tags/resumes/renderer"), 0, 0, 1),
+      resumes_resume = __loadTag(null, "resumes", 1, 1),
       partials__portfolio = loadTemplate(require.resolve("../partials/_portfolio.marko")),
       partials__footer = loadTemplate(require.resolve("../partials/_footer.marko")),
       footer_scripts = __loadTag(require("../tags/footer-scripts/renderer"), 0, 0, 1),
@@ -22,7 +22,7 @@ function create(__helpers) {
   return function render(data, out) {
     out.w("<!DOCTYPE html><html lang=\"en\"><head><title>" +
       escapeXml(data.title) +
-      "</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/public/stylesheets/core.css\"><meta charset=\"utf-8\"><meta name=\"lang\" content=\"enUS\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes\"></head><body><header class=\"header\">");
+      "</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/public/stylesheets/core.css\"><link rel=\"icon\" href=\"/public/favicon.png\" sizes=\"64x64\" type=\"image/png\"><meta charset=\"utf-8\"><meta name=\"lang\" content=\"enUS\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes\"></head><body><header class=\"header\">");
 
     partials__header.render({}, out);
 
@@ -50,82 +50,21 @@ function create(__helpers) {
     }
 
     if (data.activeTab === "skillset") {
-      skills({
-          type: "canvas"
-        }, out, 0, function renderBody(out, skills0) {
-        forEach(data.skills, function(skill) {
-          skills_skill({
-              id: skill.id,
-              text: skill.text,
-              strength: skill.strength,
-              type: skill.type
-            }, out, skills0);
-        });
-      });
-
-      out.w("<div class=\"content content-skillset\"><h2>Skills</h2>");
-
-      skills({
-          type: "content",
-          title: "UX Technical Skills"
-        }, out, 0, function renderBody(out, skills1) {
-        forEach(data.skillsUx, function(skill) {
-          skills_skill({
-              id: skill.id,
-              text: skill.text,
-              strength: skill.strength,
-              type: skill.type
-            }, out, skills1);
-        });
-      });
-
-      skills({
-          type: "content",
-          title: "Server-Side Skills"
-        }, out, 0, function renderBody(out, skills2) {
-        forEach(data.skillsServer, function(skill) {
-          skills_skill({
-              id: skill.id,
-              text: skill.text,
-              strength: skill.strength,
-              type: skill.type
-            }, out, skills2);
-        });
-      });
-
-      skills({
-          type: "content",
-          title: "Soft Skills"
-        }, out, 0, function renderBody(out, skills3) {
-        forEach(data.skillsSoft, function(skill) {
-          skills_skill({
-              id: skill.id,
-              text: skill.text,
-              strength: skill.strength,
-              type: skill.type
-            }, out, skills3);
-        });
-      });
-
-      skills({
-          type: "content",
-          title: "Developing Interests"
-        }, out, 0, function renderBody(out, skills4) {
-        forEach(data.skillsDev, function(skill) {
-          skills_skill({
-              id: skill.id,
-              text: skill.text,
-              strength: skill.strength,
-              type: skill.type
-            }, out, skills4);
-        });
-      });
-
-      out.w("</div>");
+      partials__skillset_full.render({
+          skills: data.skills
+        }, out);
     }
 
     if (data.activeTab === "resume") {
-      partials__resume.render({}, out);
+      resumes({}, out, 0, function renderBody(out, resumes0) {
+        forEach(data.resumes, function(resume) {
+          resumes_resume({
+              heading: resume.heading,
+              type: resume.type,
+              resumeItems: resume.resumeItems
+            }, out, resumes0);
+        });
+      });
     }
 
     if (data.activeTab === "portfolio") {

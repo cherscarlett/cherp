@@ -5,6 +5,5 @@ module.exports = function(req, res) {
     if (req.query.id === 'wind') {
       res.marko(wind);
     }
-
-
+    
 };

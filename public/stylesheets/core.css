@@ -33,28 +33,28 @@ img {
 @font-face {
   font-family: 'High Tower Text';
   unicode-range: U+00-FFFF;
-  src: url("/public/fonts/HighTowerText-Reg.woff2") format("woff2"), url("/public/fonts/HighTowerText-Reg.woff") format("woff"), url("/public/fonts/HighTowerText-Reg.ttf") format("truetype");
+  src: url("/public/fonts/HighTowerText-Reg.woff2") format("woff2"), url("/public/fonts/HighTowerText-Reg.woff") format("woff"), url("/public/fonts/HighTowerText-Reg.ttf") format("truetype"), url("/public/fonts/HighTowerText-Reg.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Mitre Square';
   unicode-range: U+00-FFFF;
-  src: url("/public/fonts/MitreSquare.woff2") format("woff2"), url("/public/fonts/MitreSquare.woff") format("woff"), url("/public/fonts/MitreSquare.ttf") format("truetype");
+  src: url("/public/fonts/MitreSquare.woff2") format("woff2"), url("/public/fonts/MitreSquare.woff") format("woff"), url("/public/fonts/MitreSquare.ttf") format("truetype"), url("/public/fonts/MitreSquare.ttf") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'High Tower Text';
   unicode-range: U+00-FFFF;
-  src: url("/public/fonts/HighTowerText-Italic.woff2") format("woff2"), url("/public/fonts/HighTowerText-Italic.woff") format("woff"), url("/public/fonts/HighTowerText-Italic.ttf") format("truetype");
+  src: url("/public/fonts/HighTowerText-Italic.woff2") format("woff2"), url("/public/fonts/HighTowerText-Italic.woff") format("woff"), url("/public/fonts/HighTowerText-Italic.ttf") format("truetype"), url("/public/fonts/HighTowerText-Italic.svg") format("svg");
   font-weight: normal;
   font-style: italic; }
 
 @font-face {
   font-family: 'High Tower Text';
   unicode-range: U+00-FFFF;
-  src: url("/public/fonts/HighTowerText-Bold.woff2") format("woff2"), url("/public/fonts/HighTowerText-Bold.woff") format("woff"), url("/public/fonts/HighTowerText-Bold.ttf") format("truetype");
+  src: url("/public/fonts/HighTowerText-Bold.woff2") format("woff2"), url("/public/fonts/HighTowerText-Bold.woff") format("woff"), url("/public/fonts/HighTowerText-Bold.ttf") format("truetype") url("/public/fonts/HighTowerText-Bold.svg") format("svg");
   font-weight: bold;
   font-style: normal; }
 
@@ -135,20 +135,23 @@ h6 {
       opacity: .3; }
     @media screen and (min-width: 60em) {
       .animation-canvas {
-        margin: auto; }
-        .animation-canvas:before, .animation-canvas:after {
-          content: '';
-          position: absolute;
-          width: 3.44419%;
-          background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
-          z-index: 10;
-          height: 100%; }
-        .animation-canvas:before {
-          left: 0;
-          margin-left: -1.72209%; }
-        .animation-canvas:after {
-          right: 0;
-          margin-right: -1.72209%; } }
+        margin: auto; } }
+    @media screen and (min-width: 60em) {
+      .animation-canvas:before, .animation-canvas:after {
+        content: '';
+        position: absolute;
+        width: 9.01699%;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0));
+        z-index: 10;
+        height: 100%; } }
+    @media screen and (min-width: 60em) {
+      .animation-canvas:before {
+        left: 0;
+        margin-left: -4.5085%; } }
+    @media screen and (min-width: 60em) {
+      .animation-canvas:after {
+        right: 0;
+        margin-right: -4.5085%; } }
     .animation-canvas svg {
       position: absolute; }
   .animation figcaption {
@@ -389,6 +392,88 @@ body {
     @media screen and (min-width: 40em) {
       .content ul {
         padding-left: 3.44419%; } }
+  .content-resume > p {
+    padding: 1rem 0; }
+  .content-resume .resume-document {
+    padding: 1rem 0; }
+    .content-resume .resume-document-item {
+      padding: .5rem 0; }
+      @media screen and (min-width: 40em) {
+        .content-resume .resume-document-item {
+          padding: 1rem 0; } }
+      .content-resume .resume-document-item li {
+        padding: .5rem 0; }
+      @media screen and (min-width: 40em) {
+        .content-resume .resume-document-item header {
+          display: -ms-flexbox;
+          display: flex; } }
+      .content-resume .resume-document-item hgroup, .content-resume .resume-document-item .metadata {
+        text-align: center; }
+        @media screen and (min-width: 40em) {
+          .content-resume .resume-document-item hgroup, .content-resume .resume-document-item .metadata {
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            -ms-flex-align: bottom;
+            align-items: bottom;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            text-align: left; } }
+      .content-resume .resume-document-item .metadata {
+        color: #7e8587;
+        font-style: italic;
+        font-size: 0.8rem;
+        line-height: 0.9rem;
+        text-align: center; }
+        @media screen and (min-width: 40em) {
+          .content-resume .resume-document-item .metadata {
+            text-align: right;
+            white-space: nowrap; } }
+    .content-resume .resume-document h1 {
+      font-size: 1.3rem;
+      line-height: 1.4625rem;
+      font-weight: bold;
+      text-transform: uppercase; }
+      @media screen and (min-width: 40em) {
+        .content-resume .resume-document h1 {
+          font-weight: normal;
+          font-size: 1.61803rem;
+          line-height: 1.82029rem;
+          padding-bottom: .5rem;
+          white-space: nowrap; } }
+    .content-resume .resume-document h2 {
+      font-size: 1rem;
+      line-height: initial;
+      text-transform: lowercase;
+      color: #a493ac;
+      font-style: italic;
+      display: block;
+      padding-bottom: .5rem; }
+      @media screen and (min-width: 40em) {
+        .content-resume .resume-document h2 {
+          padding-bottom: 0; } }
+      .content-resume .resume-document h2:after {
+        content: none; }
+    .content-resume .resume-document-content {
+      padding: 0.5rem 1.31556%; }
+      .content-resume .resume-document-content ul {
+        border-left: none;
+        border-top: 2px solid #cfefd2; }
+        @media screen and (min-width: 40em) {
+          .content-resume .resume-document-content ul {
+            border-left: 2px solid #cfefd2;
+            border-top: none; } }
+      @media screen and (min-width: 40em) {
+        .content-resume .resume-document-content {
+          padding-left: 2.12862%;
+          padding-right: 2.12862%; } }
+      @media screen and (min-width: 60em) {
+        .content-resume .resume-document-content {
+          padding-left: 3.44419%;
+          padding-right: 3.44419%; } }
 
 section {
   max-width: 60em;
@@ -401,10 +486,10 @@ section {
       padding: 0 2.12862%; } }
 
 .header {
-  min-width: 320px; }
+  min-width: 320px;
+  background-image: linear-gradient(white, rgba(255, 255, 255, 0)); }
   .header hgroup {
     padding: 25px 2.12862% 2.12862% 2.12862%;
-    background-image: linear-gradient(white, rgba(255, 255, 255, 0));
     text-align: center;
     max-width: 60em;
     -webkit-font-smoothing: antialiased; }
@@ -453,11 +538,11 @@ section {
       text-transform: uppercase; }
     .navigation-item-header a, .navigation-item-header a:link, .navigation-item-header a:visited, .navigation-item-header a:hover, .navigation-item-header a:active {
       color: #010f0a; }
-    .navigation-item-header a:hover, .navigation-item-header a:active {
+    .navigation-item-header a:hover, .navigation-item-header a:active, .navigation-item-header a:focus {
       color: #a493ac; }
     .navigation-item-footer a, .navigation-item-footer a:link, .navigation-item-footer a:visited, .navigation-item-footer a:hover, .navigation-item-footer a:active {
       color: white; }
-    .navigation-item-footer a:hover, .navigation-item-footer a:active {
+    .navigation-item-footer a:hover, .navigation-item-footer a:active, .navigation-item-footer a:focus {
       color: #7e8587; }
   .navigation-modal nav {
     display: block;
@@ -513,7 +598,7 @@ section {
       display: block;
       position: absolute;
       left: 50%;
-      margin-left: -1px;
+      transform: translate3d(-50%, 0, 0);
       bottom: 50%;
       transition: all 0.1618s ease-out; }
     .skill-list li:after {
@@ -542,31 +627,29 @@ section {
       border: inherit; }
       .skill-list li span:after {
         display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left: -2px;
-        margin-top: -2px;
         content: '';
         height: 4px;
         width: 4px;
         border-radius: 50%;
-        background: rgba(126, 133, 135, 0.8); }
-    .skill-list li:hover, .skill-list li:active {
+        background: rgba(126, 133, 135, 0.8);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0); }
+    .skill-list li:hover, .skill-list li:active, .skill-list li:focus {
       border-color: black;
       transform: rotate(0); }
-      .skill-list li:hover:before, .skill-list li:active:before {
+      .skill-list li:hover:before, .skill-list li:active:before, .skill-list li:focus:before {
         height: 30px; }
-      .skill-list li:hover:after, .skill-list li:active:after {
+      .skill-list li:hover:after, .skill-list li:active:after, .skill-list li:focus:after {
         height: 16px;
         padding: 4px;
         padding-bottom: 0;
         bottom: 35px; }
-      .skill-list li:hover span:after, .skill-list li:active span:after {
+      .skill-list li:hover span:after, .skill-list li:active span:after, .skill-list li:focus span:after {
         height: 8px;
         width: 8px;
-        margin-left: -4px;
-        margin-top: -4px;
+        transform: translate3d(-50%, -50%, 0);
         background-color: black; }
     .skill-list li[data-id="html5"] {
       left: 90%;
@@ -578,7 +661,7 @@ section {
         right: 0;
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="html5"]:hover:after, .skill-list li[data-id="html5"]:active:after {
+      .skill-list li[data-id="html5"]:hover:after, .skill-list li[data-id="html5"]:active:after, .skill-list li[data-id="html5"]:focus:after {
         top: 35px; }
     .skill-list li[data-id="css3"] {
       left: 50%;
@@ -595,7 +678,7 @@ section {
       .skill-list li[data-id="jquery"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="jquery"]:hover:after, .skill-list li[data-id="jquery"]:active:after {
+      .skill-list li[data-id="jquery"]:hover:after, .skill-list li[data-id="jquery"]:active:after, .skill-list li[data-id="jquery"]:focus:after {
         top: 35px; }
     .skill-list li[data-id="backbone"] {
       left: 6%;
@@ -620,7 +703,7 @@ section {
       .skill-list li[data-id="sass"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="sass"]:hover:after, .skill-list li[data-id="sass"]:active:after {
+      .skill-list li[data-id="sass"]:hover:after, .skill-list li[data-id="sass"]:active:after, .skill-list li[data-id="sass"]:focus:after {
         top: 35px; }
     .skill-list li[data-id="less"] {
       left: 34%;
@@ -637,7 +720,7 @@ section {
       .skill-list li[data-id="jade"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="jade"]:hover:after, .skill-list li[data-id="jade"]:active:after {
+      .skill-list li[data-id="jade"]:hover:after, .skill-list li[data-id="jade"]:active:after, .skill-list li[data-id="jade"]:focus:after {
         top: 35px; }
     .skill-list li[data-id="marko"] {
       left: 73%;
@@ -669,7 +752,7 @@ section {
       .skill-list li[data-id="python"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="python"]:hover:after, .skill-list li[data-id="python"]:active:after {
+      .skill-list li[data-id="python"]:hover:after, .skill-list li[data-id="python"]:active:after, .skill-list li[data-id="python"]:focus:after {
         top: 35px; }
     .skill-list li[data-id="java"] {
       left: 56%;
@@ -689,7 +772,7 @@ section {
       .skill-list li[data-id="groovy"]:after {
         top: 0;
         bottom: auto; }
-      .skill-list li[data-id="groovy"]:hover:after, .skill-list li[data-id="groovy"]:active:after {
+      .skill-list li[data-id="groovy"]:hover:after, .skill-list li[data-id="groovy"]:active:after, .skill-list li[data-id="groovy"]:focus:after {
         top: 35px; }
     .skill-list li[data-id="maven"] {
       left: 87%;
@@ -771,10 +854,9 @@ section {
       height: 12px;
       width: 12px;
       position: absolute;
-      left: 50%;
-      margin-left: -6px;
       top: 50%;
-      margin-top: -6px;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
       transition: all 0.1618s ease-out; }
     @media screen and (min-width: 60em) {
       .footer .menu, .footer .menu:link, .footer .menu:visited, .footer .menu:hover, .footer .menu:active {
@@ -807,7 +889,7 @@ section {
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
         border: none; }
-      .footer .social .github a:hover, .footer .social .github a:active {
+      .footer .social .github a:hover, .footer .social .github a:active, .footer .social .github a:focus {
         background: white; }
     .footer .social .github a, .footer .social .github a:link, .footer .social .github a:visited, .footer .social .github a:hover, .footer .social .github a:active {
       -webkit-mask-size: 20px 20px;
@@ -830,7 +912,7 @@ section {
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
         border: none; }
-      .footer .social .linkedin a:hover, .footer .social .linkedin a:active {
+      .footer .social .linkedin a:hover, .footer .social .linkedin a:active, .footer .social .linkedin a:focus {
         background: white; }
     .footer .social .github a, .footer .social .github a:link, .footer .social .github a:visited, .footer .social .github a:hover, .footer .social .github a:active {
       -webkit-mask-size: 20px 20px;

@@ -5,12 +5,6 @@
     "<portfolio>": {
         "template": "./partials/_portfolio.marko"
     },
-    "<resume>": {
-        "template": "./partials/_resume.marko"
-    },
-    "<skillset>": {
-        "template": "./partials/_skillset.marko"
-    },
     "<login>": {
         "template": "./partials/admin/_login.marko"
     },
@@ -22,6 +16,12 @@
     },
     "<ui:header>": {
         "template": "./partials/_header.marko"
+    },
+    "<admin>": {
+        "template": "./partials/admin/_admin.marko"
+    },
+    "<login>": {
+        "template": "./partials/admin/_login.marko"
     },
     "tags-dir": "./tags"
 }

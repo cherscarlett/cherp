@@ -38,7 +38,7 @@
                 color: getProperty(primary, color);
             }
 
-            a:hover, a:active {
+            a:hover, a:active, a:focus {
                 color: getProperty(tertiary, color);
             }
         }
@@ -48,7 +48,7 @@
             @include links {
                 color: white;
             }
-            a:hover, a:active {
+            a:hover, a:active, a:focus {
                 color: getProperty(secondary, color);
             }
         }

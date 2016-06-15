@@ -1,6 +1,4 @@
-figure
-    - #some kind of animation
-    figcaption
-        - I has a resume yay
-
-.content.content-resume
+resumes
+    for(resume in data.resumes)
+        resumes:resume heading=resume.heading type=resume.type resumeItems=resume.resumeItems
+        
