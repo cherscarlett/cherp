@@ -1,106 +1,17 @@
-[
-    {
-        "heading": "Employment",
-        "type": "employers",
-        "resumeItems": [
-            {
-                "employer": "Blizzard Entertainment",
-                "job": "Software Engineer",
-                "location": "Irvine, CA",
-                "timespan": "August 2015 - Present",
-                "descriptions": [
-                    {
-                        "text": "stuff"
-                    }
-                ]
-            },
-            {
-                "employer": "USA Today/Gannett",
-                "job": "Senior Developer, Web & Emerging Platforms",
-                "location": "McLean, VA",
-                "timespan": "November 2011 - August 2015",
-                "descriptions": [
-                    {
-                        "text": "Developed and maintained front-end of 100+ mobile sites (grails/JSON/XML) and hybrid iPhone/Android applications for local Gannett markets across the United States."
-                    },
-                    {
-                        "text": "Assisted in grails/groovy/velocity scripting in site maintenance and new feature additions."
-                    },
-                    {
-                        "text": "Assisted in concept, design and development of a new, improved CMS for journalists working for USAT and Gannett."
-                    },
-                    {
-                        "text": "Maintained front-end of the new USA Today desktop HTML5/CSS3 website. (Python/Django/JSON)"
-                    },
-                    {
-                        "text": "Developed and maintained front-end redesign of USA Today and Gannett publishing and broadcast mobile sites, including innovating new ad experiences, new user experiences (longform stories, galleries, live video broadcasts) working in Django, Python, HTML5, CSS3 and Javascript/AJAX."
-                    },
-                    {
-                        "text": "Completed light, fill-in design work."
-                    }
-                ]
-            },
-            {
-                "employer": "Neutrino Inc",
-                "job": "Front-End Developer",
-                "location": "Seattle, WA",
-                "timespan": "January 2008 - November 2011",
-                "descriptions": [
-                    {
-                        "text": "stuff"
-                    }
-                ]
-            },
-            {
-                "employer": "Biego, LLC",
-                "job": "Full-Stack Engineer",
-                "location": "Seattle, WA",
-                "timespan": "January 2008 - December 2008",
-                "descriptions": [
-                    {
-                        "text": "stuff"
-                    }
-                ]
-            },
-            {
-                "employer": "LuxuryRealEstate.com",
-                "job": "Front-End Developer",
-                "location": "Seattle, WA",
-                "timespan": "March 2006 - January 2008",
-                "descriptions": [
-                    {
-                        "text": "stuff"
-                    }
-                ]
-            },
-            {
-                "employer": "cherstewart.com [retired]",
-                "job": "Design & Developer",
-                "location": "Seattle, WA",
-                "timespan": "March 2005 - November 2011",
-                "descriptions": [
-                    {
-                        "text": "stuff"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "heading": "Education",
-        "type": "educators",
-        "resumeItems": [
-            {
-                "employer": "University of Missouri",
-                "job": "Physics & Astronomy",
-                "location": "Saint Louis, MO",
-                "timespan": "September 2008 - May 2011",
-                "descriptions": [
-                    {
-                        "text": "stuff"
-                    }
-                ]
-            }
-        ]
-    }
-]
+{
+    "heading": "Education",
+    "type": "educators",
+    "resumeItems": [
+        {
+            "title": "University of Missouri",
+            "job": "Physics & Astronomy",
+            "location": "Saint Louis, MO",
+            "timespan": "September 2008 - May 2011",
+            "descriptions": [
+                {
+                    "text": "stuff"
+                }
+            ]
+        }
+    ]
+}

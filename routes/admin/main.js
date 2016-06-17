@@ -4,15 +4,19 @@ var navItems = require('../../private/menu.json'),
 
 module.exports = function(req, res) { 
     mongoose.model('portfolioItem').find({}, function (err, portfolioItems) {
-          if (err) {
+      mongoose.model('user').findById(req.session.passport.user, function(err, profile) {
+        if (err) {
               return console.error(err);
-          } else {
-              res.marko(layout, {
-                title: 'Cher Stewart | Software Engineer | Admin',
-                activeTab: 'admin',
-                navItems: navItems,
-                portfolioItems: portfolioItems
-              });
-          }     
+        } else {
+            res.marko(layout, {
+              title: 'Cher Stewart | Software Engineer | Admin',
+              activeTab: 'admin',
+              navItems: navItems,
+              portfolioItems: portfolioItems.reverse(),
+              scripts: ['/public/javascripts/admin.js'],
+              user: profile
+            });
+          }  
+      });       
     });
 };

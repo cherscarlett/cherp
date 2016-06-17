@@ -29,6 +29,7 @@ Modal.prototype.create = function(data) {
     var $modal = $('.' + this.options.component + '-modal');
     if ($modal.length) {
         $modal.remove();
+        $('.modal-overlay').remove();
     }
 
     $modal = $('<div />');
@@ -99,7 +100,7 @@ function toggleContent() {
 
 function buildOverlay() {
     this.overlay = document.createElement("div");
-    this.overlay.className = "modal-overlay modal-overlay-" + this.options.theme;
+    this.overlay.className = "modal-overlay modal-overlay-" + this.options.theme + " modal-overlay-" + this.options.component;
     $(this.options.el).after(this.overlay);
     $(this.overlay).velocity("fadeIn", { duration: 200})
 }

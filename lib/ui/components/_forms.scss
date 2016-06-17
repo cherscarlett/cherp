@@ -1,0 +1,131 @@
+.no-items {
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: nowrap;
+
+    &-list {
+        border-radius: 2px;
+        padding-left: 0!important;
+        background-color: transparentize(getProperty(primary, background-color), .3);
+        border: 1px solid transparentize(getProperty(secondary, color), .85);
+    }
+}
+@include links(".admin-new") {
+    margin: 1rem 0;
+    display: inline-block;
+    align-self: flex-end;
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+
+    &:nth-child(even) {
+        background-color: transparentize(getProperty(secondary, color), .9);
+    }
+
+    &:hover {
+        box-shadow: inset -7px -7px 10px -7px transparentize(getProperty(secondary, background-color), .7);
+    }
+
+    @include icon(delete);
+
+    .delete {
+        a:hover, a:active, a:focus {
+            background-color: getProperty(secondary, background-color);
+        }
+    }
+
+    &-new {
+        &-field {
+            display: flex;
+            align-items: center;
+            padding: 0 0 1rem 0;
+            flex-wrap: wrap;
+
+            label {
+                width: 100px;
+                text-align: right;
+                margin-right: 1rem;
+                padding-top: 2px;
+                display: inline-block;
+            }
+
+            input[type="text"] {
+                border: 1px solid getProperty(primary, border-color);
+                border-radius: 2px;
+                box-shadow: inset 0 2px 5px transparentize(getProperty(secondary, background-color), .5);
+                display: inline-block;
+                padding: 4px 4px 1px 4px;
+                font-family: inherit;
+                font-size: inherit;
+                font-style: italic;
+                color: getProperty(primary, color);
+                width: 65%;
+
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 4px 1px getProperty(primary, border-color);
+                }
+            }
+
+            input[type="file"] {
+                opacity: 0;
+                cursor: pointer;
+                padding: 7px 0;
+                display: block;
+                width: 190px;
+            }
+        }
+
+        &-related {
+            position: relative;
+            width: 190px;
+
+            &:before {
+                content: 'Choose Files';
+                position: absolute;
+                white-space: nowrap;
+                top: 0;
+                left: 0;
+                @include button;
+                @include button(secondary, default);
+            }
+            &:hover {
+                &:before {
+                    @include button(secondary, hover);
+                }
+            }
+        }
+
+        &-submit {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        &-description {
+            width: 65%;
+
+            input[type="text"] {
+                width: 100%;
+                margin-bottom: .5rem;
+            }
+
+            &-more {
+                padding-top: .5rem;
+                display: inline-block;
+                margin-left: auto;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+

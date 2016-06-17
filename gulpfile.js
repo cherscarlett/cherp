@@ -6,7 +6,7 @@ gulp.task("default", ["sass"]);
 
 gulp.task('sass', function() {
 
-    gulp.src('./lib/ui/core.scss')
+    gulp.src(['./lib/ui/core.scss', './lib/ui/admin.scss'])
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
