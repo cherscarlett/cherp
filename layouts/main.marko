@@ -25,9 +25,7 @@ html lang="en"
                 include('../partials/_skillset-full') skills=data.skills
 
             if(data.activeTab === 'resume')
-                resumes
-                    for(resume in data.resumes)
-                        resumes:resume heading=resume.heading type=resume.type resumeItems=resume.resumeItems
+                include('../partials/_resume') resumes=data.resumes
 
             if(data.activeTab === 'portfolio')
                 portfolio

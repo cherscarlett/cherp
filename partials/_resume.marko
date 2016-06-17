@@ -1,4 +1,21 @@
-resumes
-    for(resume in data.resumes)
-        resumes:resume heading=resume.heading type=resume.type resumeItems=resume.resumeItems
-        
+.content.content-resume
+    p - Software Engineer with over 15 years of experience in front-end technologies, 10 years of full-stack experience. I love math, logic and data structures, but have the strongest front-end eye. I am flexible in working environments having worked remotely as a contractor, startups, studio-agencies, and fortune 500 companies.
+    .resume-list if(notEmpty(data.resumes))
+        for(resume in data.resumes)
+            h3.resume-type - ${resume.heading}
+            ol.resume-document
+             for(resumeItem in resume.resumeItems)
+                li.resume-document-item
+                    article
+                        header
+                            hgroup
+                                h1 - ${resumeItem.title}
+                                h2 - ${resumeItem.job}
+                            .metadata
+                                .location - ${resumeItem.location}
+                                .timespan - ${resumeItem.timespan}
+                        .resume-document-content if(notEmpty(resumeItem.descriptions))
+                            ul
+                                li for(description in resumeItem.descriptions)
+                                   p - ${description.text}
+            

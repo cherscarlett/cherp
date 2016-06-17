@@ -7,11 +7,14 @@
             "job": "Physics & Astronomy",
             "location": "Saint Louis, MO",
             "timespan": "September 2008 - May 2011",
-            "descriptions": [
-                {
-                    "text": "stuff"
-                }
-            ]
+            "descriptions": []
+        },
+        {
+            "title": "Academy of Art",
+            "job": "Photography & Web Design",
+            "location": "Seattle, WA",
+            "timespan": "September 2005 - May 2007",
+            "descriptions": []
         }
     ]
 }
