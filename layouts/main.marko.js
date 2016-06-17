@@ -12,8 +12,7 @@ function create(__helpers) {
       classAttr = __helpers.ca,
       partials__about = loadTemplate(require.resolve("../partials/_about.marko")),
       partials__skillset_full = loadTemplate(require.resolve("../partials/_skillset-full")),
-      resumes = __loadTag(require("../tags/resumes/renderer"), 0, 0, 1),
-      resumes_resume = __loadTag(null, "resumes", 1, 1),
+      partials__resume = loadTemplate(require.resolve("../partials/_resume")),
       partials__portfolio = loadTemplate(require.resolve("../partials/_portfolio.marko")),
       partials__footer = loadTemplate(require.resolve("../partials/_footer.marko")),
       footer_scripts = __loadTag(require("../tags/footer-scripts/renderer"), 0, 0, 1),
@@ -56,15 +55,9 @@ function create(__helpers) {
     }
 
     if (data.activeTab === "resume") {
-      resumes({}, out, 0, function renderBody(out, resumes0) {
-        forEach(data.resumes, function(resume) {
-          resumes_resume({
-              heading: resume.heading,
-              type: resume.type,
-              resumeItems: resume.resumeItems
-            }, out, resumes0);
-        });
-      });
+      partials__resume.render({
+          resumes: data.resumes
+        }, out);
     }
 
     if (data.activeTab === "portfolio") {
