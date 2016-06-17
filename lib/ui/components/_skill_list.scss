@@ -75,6 +75,7 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
         &:hover, &:active, &:focus {
             border-color: black;
             transform: rotate(0);
+            outline: none;
 
             &:before {
                 height: 30px;
