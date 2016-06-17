@@ -1,15 +1,6 @@
 .content.content-admin
     h2 - Manage Resume
     .items
-        a.admin-new
+        a.admin-new href="/admin/portfolio/new"
             - Add new item
-    ul.items-list if(notEmpty(data.portfolioItems))
-        for(item in data.portfolioItems)
-            li.item
-                a.item-edit href='/admin/portfolio/edit/${item.id}'
-                    - item.title
-                a.item-delete
-                    span - Delete
-    else
-        p.no-items
-            - There are no resume items.
+        include('./_portfolio_items') portfolioItems=data.portfolioItems

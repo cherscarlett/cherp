@@ -273,50 +273,77 @@ h6 {
   100% {
     transform: translate(0, 0%); } }
 
-.modal-close, .modal-close:link, .modal-close:visited, .modal-close:hover, .modal-close:active {
-  height: 15px;
-  width: 15px;
-  -webkit-mask-image: url("/public/images/icon-close.svg");
-  mask-image: url("/public/images/icon-close.svg");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  top: 0;
-  right: 0;
-  margin: 15px 15px;
-  z-index: 300;
-  padding: 0;
-  background-color: rgba(126, 133, 135, 0.95);
-  position: absolute;
-  text-indent: -10000px;
-  transition: all 0.1618s ease-out; }
-
-.modal-close:hover, .modal-close:active {
-  background-color: rgba(255, 255, 255, 0.9); }
-
-.modal > div, .modal > nav {
-  border: 1px solid rgba(141, 129, 165, 0.5);
-  z-index: 300;
-  background: #010f0a url("/public/images/bg-dark.png") 50% 50% repeat;
-  background-size: 360px 360px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5); }
-
-.modal-overlay {
-  position: fixed;
-  z-index: 200;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  left: 0; }
-  @media screen and (min-width: 60em) {
-    .modal-overlay {
-      display: none !important; } }
-  .modal-overlay-dark {
-    background: rgba(0, 0, 0, 0.7); }
-  .modal-overlay-light {
-    background: rgba(255, 255, 255, 0.85); }
-
-.modal.is-open {
-  z-index: 100; }
+.modal {
+  color: rgba(255, 255, 255, 0.8); }
+  .modal a:hover {
+    color: #7e8587; }
+  .modal-close, .modal-close:link, .modal-close:visited, .modal-close:hover, .modal-close:active {
+    height: 15px;
+    width: 15px;
+    -webkit-mask-image: url("/public/images/icon-close.svg");
+    mask-image: url("/public/images/icon-close.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    top: 0;
+    right: 0;
+    margin: 15px 15px;
+    z-index: 300;
+    padding: 0;
+    background-color: rgba(126, 133, 135, 0.95);
+    position: absolute;
+    text-indent: -10000px;
+    transition: all 0.1618s ease-out; }
+  .modal-close:hover, .modal-close:active {
+    background-color: rgba(255, 255, 255, 0.9); }
+  .modal > div, .modal > nav {
+    border: 1px solid rgba(141, 129, 165, 0.5);
+    z-index: 300;
+    background: #010f0a url("/public/images/bg-dark.png") 50% 50% repeat;
+    background-size: 360px 360px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+    padding: 15px 15px;
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    right: 20px;
+    left: 20px;
+    min-width: 280px;
+    max-width: 40em;
+    transition: width 0.1618s ease-out; }
+    @media screen and (min-width: 30em) {
+      .modal > div, .modal > nav {
+        width: 320px;
+        left: 50%;
+        right: auto;
+        margin-left: -160px; } }
+  .modal > div {
+    top: 50%;
+    margin-top: -30vh;
+    max-height: 70vh;
+    overflow: auto; }
+    @media screen and (min-width: 30em) {
+      .modal > div {
+        width: auto;
+        left: 20px;
+        right: 20px;
+        margin-left: auto;
+        margin-right: auto; } }
+  .modal-overlay {
+    position: fixed;
+    z-index: 200;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0; }
+    @media screen and (min-width: 60em) {
+      .modal-overlay-navigation {
+        display: none !important; } }
+    .modal-overlay-dark {
+      background: rgba(0, 0, 0, 0.7); }
+    .modal-overlay-light {
+      background: rgba(255, 255, 255, 0.85); }
+  .modal.is-open {
+    z-index: 300; }
 
 body {
   background: white url("/public/images/bg.png") 50% 50% repeat;
@@ -545,27 +572,13 @@ section {
     .navigation-item-footer a:hover, .navigation-item-footer a:active, .navigation-item-footer a:focus {
       color: #7e8587; }
   .navigation-modal nav {
-    display: block;
-    position: fixed;
     top: calc(100vh - 20px);
-    right: 20px;
-    left: 20px;
-    height: calc(100% - 40px);
-    min-width: 280px;
-    transition: width 0.1618s ease-out; }
-    @media screen and (min-width: 30em) {
-      .navigation-modal nav {
-        width: 320px;
-        left: 50%;
-        right: auto;
-        margin-left: -160px; } }
+    height: calc(100% - 40px); }
     .navigation-modal nav ul {
       -ms-flex-direction: column;
       flex-direction: column;
       min-width: 280px;
       padding-top: 45px; }
-  .navigation-modal.is-open {
-    z-index: 300; }
   @media screen and (min-width: 60em) {
     .navigation-modal {
       display: none !important; } }
@@ -873,47 +886,42 @@ section {
     display: flex;
     -ms-flex-align: end;
     align-items: flex-end; }
+    .footer .social .github a, .footer .social .github a:link, .footer .social .github a:visited, .footer .social .github a:hover, .footer .social .github a:active {
+      display: block;
+      background: #8d81a5;
+      -webkit-mask-image: url("/public/images/icon-github.svg");
+      mask-image: url("/public/images/icon-github.svg");
+      transition: all 0.1618s ease-out;
+      text-indent: -10000px;
+      height: 22px;
+      width: 22px;
+      -webkit-mask-size: 22px 22px;
+      mask-size: 22px 22px;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      border: none; }
+    .footer .social .github a:hover, .footer .social .github a:active, .footer .social .github a:focus {
+      background: white; }
     .footer .social .github {
       margin-right: 6px; }
-      .footer .social .github a, .footer .social .github a:link, .footer .social .github a:visited, .footer .social .github a:hover, .footer .social .github a:active {
-        display: block;
-        background: #8d81a5;
-        -webkit-mask-image: url("/public/images/icon-github.svg");
-        mask-image: url("/public/images/icon-github.svg");
-        transition: all 0.1618s ease-out;
-        text-indent: -10000px;
-        height: 22px;
-        width: 22px;
-        -webkit-mask-size: 22px 22px;
-        mask-size: 22px 22px;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        border: none; }
-      .footer .social .github a:hover, .footer .social .github a:active, .footer .social .github a:focus {
-        background: white; }
-    .footer .social .github a, .footer .social .github a:link, .footer .social .github a:visited, .footer .social .github a:hover, .footer .social .github a:active {
-      -webkit-mask-size: 20px 20px;
-      mask-size: 20px 20px;
-      -webkit-mask-position: 50% 50%;
-      mask-position: 50% 50%; }
+    .footer .social .linkedin a, .footer .social .linkedin a:link, .footer .social .linkedin a:visited, .footer .social .linkedin a:hover, .footer .social .linkedin a:active {
+      display: block;
+      background: #8d81a5;
+      -webkit-mask-image: url("/public/images/icon-linkedin.svg");
+      mask-image: url("/public/images/icon-linkedin.svg");
+      transition: all 0.1618s ease-out;
+      text-indent: -10000px;
+      height: 22px;
+      width: 22px;
+      -webkit-mask-size: 22px 22px;
+      mask-size: 22px 22px;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      border: none; }
+    .footer .social .linkedin a:hover, .footer .social .linkedin a:active, .footer .social .linkedin a:focus {
+      background: white; }
     .footer .social .linkedin {
       margin-right: 6px; }
-      .footer .social .linkedin a, .footer .social .linkedin a:link, .footer .social .linkedin a:visited, .footer .social .linkedin a:hover, .footer .social .linkedin a:active {
-        display: block;
-        background: #8d81a5;
-        -webkit-mask-image: url("/public/images/icon-linkedin.svg");
-        mask-image: url("/public/images/icon-linkedin.svg");
-        transition: all 0.1618s ease-out;
-        text-indent: -10000px;
-        height: 22px;
-        width: 22px;
-        -webkit-mask-size: 22px 22px;
-        mask-size: 22px 22px;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        border: none; }
-      .footer .social .linkedin a:hover, .footer .social .linkedin a:active, .footer .social .linkedin a:focus {
-        background: white; }
     .footer .social .github a, .footer .social .github a:link, .footer .social .github a:visited, .footer .social .github a:hover, .footer .social .github a:active {
       -webkit-mask-size: 20px 20px;
       mask-size: 20px 20px;

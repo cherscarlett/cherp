@@ -57,30 +57,13 @@
 
     &-modal {
         nav {
-            display: block;
-            position: fixed;
             top: calc(100vh - 20px);
-            right: 20px;
-            left: 20px;
             height: calc(100% - 40px);
-            min-width: 280px;
-            @include transition(width);
-
-            @include break-point(mobile) {
-                width: 320px;
-                left: 50%;
-                right: auto;
-                margin-left: -160px;
-            }
             ul {
                 flex-direction: column;
                 min-width: 280px;
                 padding-top: 45px;
             }
-        }
-
-        &.is-open {
-            z-index: 300;
         }
 
         @include break-point(desktop-sm) {

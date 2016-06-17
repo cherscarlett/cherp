@@ -1,5 +1,11 @@
 .modal {
 
+    color: transparentize(white, .2);
+
+    a:hover {
+        color: getProperty(secondary, color);
+    }
+
     @include links(& + "-close") {
         height: 15px;
         width: 15px;
@@ -26,6 +32,38 @@
         background: getProperty(secondary, background-color) url('#{$image-folder}bg-dark.png') 50% 50% repeat;
         background-size: 360px 360px; 
         box-shadow: 0 0 8px 0 transparentize(black, .5);
+        padding: 15px 15px;
+        box-sizing: border-box;
+        display: block;
+        position: fixed;
+        right: 20px;
+        left: 20px;
+        min-width: 280px;
+        max-width: map-get($screen-sizes, tablet);
+        @include transition(width);
+
+        @include break-point(mobile) {
+            width: 320px;
+            left: 50%;
+            right: auto;
+            margin-left: -160px;
+        }
+    }
+
+    > div {
+
+        top: 50%;
+        margin-top: -30vh;
+        max-height: 70vh;
+        overflow: auto;
+
+        @include break-point(mobile) {
+            width: auto;
+            left: 20px;
+            right: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     &-overlay {
@@ -36,8 +74,10 @@
         bottom: 0;
         left: 0;
 
-        @include break-point(desktop-sm) {
-            display: none!important;
+        &-navigation {
+            @include break-point(desktop-sm) {
+                display: none!important;
+            }
         }
 
         &-dark {
@@ -50,6 +90,6 @@
     }
 
     &.is-open {
-        z-index: 100;
+        z-index: 300;
     }
 }

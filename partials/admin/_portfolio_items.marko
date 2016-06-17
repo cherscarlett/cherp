@@ -1,0 +1,7 @@
+ul.items-list if(notEmpty(data.portfolioItems))
+    for(item in data.portfolioItems)
+        portfolioItem id=item.id title=item.title
+
+else
+    p.no-items
+        - There are no resume items.

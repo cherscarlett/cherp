@@ -1,23 +1,28 @@
 .item-new
     form
-        div
+        .item-new-field
             label - Title
-            input name="title" placeholder="Workplace Inc"
-        div
+            input name="title" placeholder="Workplace Inc" type="text"
+        .item-new-field
             label - Location
-            input name="location" placeholder="The Moon, Universe"
-        div
+            input name="location" placeholder="The Moon, Universe" type="text"
+        .item-new-field
             label - Job Title
-            input name="job" placeholder="Grandmaster Poobah"
-        div
+            input name="job" placeholder="Grandmaster Poobah" type="text"
+        .item-new-field
             label - Time Spent
-            input name="timespan" placeholder="400 BC - 0"
-        div
+            input name="timespan" placeholder="400 BC - 0" type="text"
+        .item-new-field
             label - Skills
-            div.item-new-skills
-                input name="skill" placeholder="Stackoverflow"
-            a.add.skill-add href="javascript:;" - Add another skill
-        div
+            input name="skills" placeholder="Stackoverflow, copy/paste, etc" type="text"
+        .item-new-field
+            label - Descriptions
+            div.item-new-description
+                input name="description_text" placeholder="Writing code" type="text"
+            a.item-new-description-more href="javascript:;" - Add another description
+        .item-new-field
             label - Asides
             div.item-new-related
                 input type="file" accept="image/*" multiple
+        .item-new-submit
+            input.button.button-primary type="submit" value="Save"

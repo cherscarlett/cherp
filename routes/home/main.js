@@ -15,7 +15,8 @@ module.exports = function(req, res) {
           heading: 'Cher Stewart',
           subHeading: 'Software Engineer',
           activeTab: 'about',
-          navItems: navItems
+          navItems: navItems,
+          user: req.user
         });   
     }
 };

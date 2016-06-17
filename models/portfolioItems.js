@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    portfolioSchema = new mongoose.Schema({  
+    portfolioSchema = new mongoose.Schema({ 
         title: String,
         location: String,
         job: String,

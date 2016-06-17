@@ -1,9 +1,20 @@
 var navItems = require('../../private/menu.json'),
     layout = require('../../layouts/main.marko'),
     ajax = require('../../partials/_resume.marko'),
-    resumes = require('../../private/resume.json');
+    educationItems = require('../../private/resume.json'),
+    resumes = [],
+    mongoose = require('mongoose');
 
 module.exports = function(req, res) {
+  mongoose.model('portfolioItem').find({}, function (err, portfolioItems) {
+    employmentItems = {
+      heading: "Employment",
+      type: "employers",
+      resumeItems: portfolioItems.reverse()
+    }
+
+    resumes.push(employmentItems);
+    resumes.push(educationItems);
 
     if (req.query.ajax) {
         res.marko(ajax, {
@@ -13,13 +24,14 @@ module.exports = function(req, res) {
         });
     }
     else {
-        res.marko(layout, {
-          title: 'Cher Stewart | Software Engineer | Resume',
-          heading: 'Cher Stewart',
-          subHeading: 'Software Engineer',
-          activeTab: 'resume',
-          navItems: navItems,
-          resumes: resumes
-        });
+      res.marko(layout, {
+        title: 'Cher Stewart | Software Engineer | Resume',
+        heading: 'Cher Stewart',
+        subHeading: 'Software Engineer',
+        activeTab: 'resume',
+        navItems: navItems,
+        resumes: resumes
+      });
     }
+  });
 };

@@ -65,3 +65,25 @@ $transition-type-default: ease-out;
     
     transform: translate3d($x, $y, 0); 
 }
+
+@mixin icon($icon) {
+    .#{$icon} {
+
+        @include links {
+            display: block;
+            background: getProperty(tertiary, background-color);
+            mask-image: url('#{$image-folder}icon-#{$icon}.svg');
+            @include transition(all);
+            text-indent: -10000px;
+            height: 22px;
+            width: 22px;
+            mask-size: 22px 22px;
+            mask-repeat: no-repeat;
+            border: none;
+        }
+
+        a:hover, a:active, a:focus {
+            background: white;
+        }
+    }
+}

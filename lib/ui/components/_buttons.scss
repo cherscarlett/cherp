@@ -1,0 +1,60 @@
+// Mixins
+
+@mixin button($type:'', $state:'') {
+    @if $state == default {
+        border: none;
+        @include transition(all);
+        font-family: inherit;
+        font-size: inherit;
+        text-transform: lowercase;
+    }
+
+    @else if $state == hover {
+        background-color: transparentize(white, .8);
+        border-color: transparentize(white, .3);
+        color: white;
+    }
+
+    @if $type == primary {
+        @if $state == default {    
+            background: linear-gradient(getProperty(tertiary, background-color), transparentize(getProperty(tertiary, background-color), .5));
+            border-bottom: 1px solid transparentize(getProperty(tertiary, color), .8);
+            color: transparentize(white, .1);
+        }
+    }
+
+    @else if $type == secondary {
+        @if $state == default { 
+            color: transparentize(white, .4);
+            border: 1px solid transparentize(getProperty(tertiary, color), .4);
+            background: linear-gradient(transparentize(getProperty(tertiary, background-color), .99), transparentize(getProperty(secondary, background-color), .5));
+        }
+    }
+
+    @else {   
+        border-radius: 2px;
+        padding: 6px 50px 4px 50px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+}
+
+// Styles
+
+.button {
+
+    @include links(&) {
+        @include button;
+    }
+
+    @include links(& + "-primary") {
+        @include button(primary, default);
+    }
+
+    &-primary {
+        &:hover, &:active, &:focus {
+            @include button(primary, hover);
+        }
+    }
+}
