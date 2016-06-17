@@ -11,6 +11,8 @@ $(document).ready(function() {
     }
 });
 
+document.addEventListener("touchstart", function() {}, false);
+
 function loadSvgs(svgs, canvas) {
     for( var i = 0; i < svgs.length; i++) {
         var svg = svgs[i];

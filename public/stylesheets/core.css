@@ -651,7 +651,8 @@ section {
         transform: translate3d(-50%, -50%, 0); }
     .skill-list li:hover, .skill-list li:active, .skill-list li:focus {
       border-color: black;
-      transform: rotate(0); }
+      transform: rotate(0);
+      outline: none; }
       .skill-list li:hover:before, .skill-list li:active:before, .skill-list li:focus:before {
         height: 30px; }
       .skill-list li:hover:after, .skill-list li:active:after, .skill-list li:focus:after {
