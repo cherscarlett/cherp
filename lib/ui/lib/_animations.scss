@@ -190,6 +190,8 @@ $svgs: balloon, low-clouds, high-clouds, birds, mountains;
 
 svg#wind {
     animation: windScroll 60s infinite alternate;
+    opacity: .45;
+    
     .st1 {
         fill-rule: evenodd;
         clip-rule: evenodd;
