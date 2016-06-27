@@ -1,5 +1,5 @@
 # cherp
 
-[cherp.io](//cherp.io)
+[cherp.io](http://cherp.io)
 
 Personal Website for Software Engineer Cher Stewart.
