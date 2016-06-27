@@ -1,6 +1,6 @@
 var navItems = require('../../private/menu.json'),
     layout = require('../../layouts/main.marko'),
-    ajax = require('../../partials/_about.marko');
+    ajax = require('../../views/_about.marko');
 
 module.exports = function(req, res) {
     if (req.query.ajax) {

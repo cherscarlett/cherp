@@ -1,11 +1,11 @@
 var navItems = require('../../private/menu.json'),
     layout = require('../../layouts/main.marko'),
-    ajax = require('../../partials/_resume.marko'),
+    ajax = require('../../views/_resume.marko'),
     educationItems = require('../../private/resume.json'),
     mongoose = require('mongoose');
 
 module.exports = function(req, res) {
-  mongoose.model('portfolioItem').find({}, function (err, portfolioItems) {
+  mongoose.model('portfolioItem').find().sort({order: -1}).exec(function (err, portfolioItems) {
     
     var resumes = consolidateResumeItems(portfolioItems);
 
@@ -35,7 +35,7 @@ function consolidateResumeItems(portfolioItems) {
   employmentItems = {
       heading: "Employment",
       type: "employers",
-      resumeItems: portfolioItems.reverse()
+      resumeItems: portfolioItems
   }
 
   resumes.push(employmentItems);

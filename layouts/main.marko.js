@@ -4,26 +4,26 @@ function create(__helpers) {
       notEmpty = __helpers.ne,
       escapeXml = __helpers.x,
       loadTemplate = __helpers.l,
-      partials__header = loadTemplate(require.resolve("../partials/_header.marko")),
+      views__header = loadTemplate(require.resolve("../views/_header.marko")),
       __loadTag = __helpers.t,
       navigation = __loadTag(require("../tags/navigation/renderer"), 0, 0, 1),
       forEach = __helpers.f,
       navigation_navItem = __loadTag(null, "navItems", 1),
       classAttr = __helpers.ca,
-      partials__about = loadTemplate(require.resolve("../partials/_about.marko")),
-      partials__skillset_full = loadTemplate(require.resolve("../partials/_skillset-full")),
-      partials__resume = loadTemplate(require.resolve("../partials/_resume")),
-      partials__portfolio = loadTemplate(require.resolve("../partials/_portfolio.marko")),
-      partials__footer = loadTemplate(require.resolve("../partials/_footer.marko")),
+      views__about = loadTemplate(require.resolve("../views/_about.marko")),
+      views__skillset_full = loadTemplate(require.resolve("../views/_skillset-full")),
+      views__resume = loadTemplate(require.resolve("../views/_resume")),
+      views__portfolio = loadTemplate(require.resolve("../views/_portfolio")),
+      views__footer = loadTemplate(require.resolve("../views/_footer.marko")),
       footer_scripts = __loadTag(require("../tags/footer-scripts/renderer"), 0, 0, 1),
       footer_scripts_script = __loadTag(null, "scripts", 1);
 
   return function render(data, out) {
     out.w("<!DOCTYPE html><html lang=\"en\"><head><title>" +
       escapeXml(data.title) +
-      "</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/public/stylesheets/core.css\"><link rel=\"icon\" href=\"/public/favicon.png\" sizes=\"64x64\" type=\"image/png\"><meta charset=\"utf-8\"><meta name=\"lang\" content=\"enUS\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes\"></head><body><header class=\"header\">");
+      "</title><link rel=\"stylesheet\" type=\"text/css\" href=\"/public/stylesheets/core.css\"><link rel=\"icon\" href=\"/public/favicon.png\" sizes=\"64x64\" type=\"image/png\"><meta charset=\"utf-8\"><meta name=\"lang\" content=\"enUS\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes\"><meta name=\"author\" content=\"Cher Stewart\"><meta name=\"description\" content=\"Portfolio and resume for Cher Stewart, a software engineer. Cher Stewart has been a front-end developer since 2000, and learned back-end tech in 2007 to become a full-stack engineer.\"><meta name=\"keywords\" content=\"Cher Stewart, Software Engineer, Front-End Developer, UX Developer, UI Developer, Back-End Engineer, Back-End Developer, Full-Stack Engineer\"></head><body><header class=\"header\">");
 
-    partials__header.render({}, out);
+    views__header.render({}, out);
 
     if (notEmpty(data.navItems)) {
       navigation({
@@ -45,23 +45,25 @@ function create(__helpers) {
       ">");
 
     if (data.activeTab === "about") {
-      partials__about.render({}, out);
+      views__about.render({}, out);
     }
 
     if (data.activeTab === "skillset") {
-      partials__skillset_full.render({
+      views__skillset_full.render({
           skills: data.skills
         }, out);
     }
 
     if (data.activeTab === "resume") {
-      partials__resume.render({
+      views__resume.render({
           resumes: data.resumes
         }, out);
     }
 
     if (data.activeTab === "portfolio") {
-      partials__portfolio.render({}, out);
+      views__portfolio.render({
+          item: data.item
+        }, out);
     }
 
     out.w("</section><footer class=\"footer\">");
@@ -83,7 +85,7 @@ function create(__helpers) {
 
     out.w("<div class=\"footer-content\">");
 
-    partials__footer.render({}, out);
+    views__footer.render({}, out);
 
     out.w("</div></footer>");
 

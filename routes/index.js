@@ -5,12 +5,8 @@ var homeRoute = require("./home"),
     adminRoute = require("./admin"),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
-    passport = require('passport');
-
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {return next();}
-  res.redirect('/');
-}
+    passport = require('passport'),
+    ensureAuthenticated = require('../models/authenticate');
 
 module.exports = function (router) {
 
@@ -40,6 +36,10 @@ module.exports = function (router) {
         name: "portfolio"
       }).get(portfolioRoute.index);
 
+    router({
+        path: "/portfolio/list",
+        name: "portfolioList"
+      }).get(portfolioRoute.list);
 
     router({
         path: "/portfolio/:slug",
@@ -71,17 +71,17 @@ module.exports = function (router) {
       path: "/logout",
       name: "logout"
     }).get(function(req,res) {
-      req.logout();
-      res.redirect('/');
-    });
+        req.logout();
+        res.redirect('/');
+      });
 
     router({
       path: "/login/return",
       name: "loginReturn"
     }).get(passport.authenticate('github', { failureRedirect: '/login' }), 
-          function(req,res) {
-            res.redirect('/admin');
-    });
+        function(req,res) {
+          res.redirect('/admin');
+        });
 
     router({
       path: "/admin",
@@ -89,17 +89,23 @@ module.exports = function (router) {
     }).get(ensureAuthenticated, adminRoute.index);
 
     router({
-          path: "/admin/portfolio/new",
-          name: "newPortfolioItem"
-        }).get(ensureAuthenticated, adminRoute.portfolio.new);
+      path: "/admin/portfolio/new",
+      name: "newPortfolioItem"
+    }).get(ensureAuthenticated, adminRoute.portfolio.new);
+
+    router({
+      path: "/admin/portfolio/asides",
+      name: "newPortfolioAsides"
+    }).get(ensureAuthenticated, adminRoute.portfolio.asides);
 
     router({
       path: "/admin/portfolio/:id",
       name: "viewPortfolioItem"
     }).get(ensureAuthenticated, adminRoute.portfolio.view);
 
+    router.post("/admin/portfolio/upload", ensureAuthenticated, adminRoute.portfolio.upload);
     router.post("/admin/portfolio/update/:id", ensureAuthenticated, adminRoute.portfolio.update);
     router.post("/admin/portfolio/create/", ensureAuthenticated, adminRoute.portfolio.create);
-    router.post("/admin/portfolio/delete/:id", ensureAuthenticated, adminRoute.portfolio.delete);
+    router.delete("/admin/portfolio/delete/:id", ensureAuthenticated, adminRoute.portfolio.delete);
 
 };

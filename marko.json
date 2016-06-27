@@ -1,27 +1,24 @@
 {
     "<about>": {
-        "template": "./partials/_about.marko"
-    },
-    "<portfolio>": {
-        "template": "./partials/_portfolio.marko"
+        "template": "./views/_about.marko"
     },
     "<login>": {
-        "template": "./partials/admin/_login.marko"
+        "template": "./views/admin/_login.marko"
     },
     "<admin>": {
-        "template": "./partials/admin/_admin.marko"
+        "template": "./views/admin/_admin.marko"
     },
     "<ui:footer>": {
-        "template": "./partials/_footer.marko"
+        "template": "./views/_footer.marko"
     },
     "<ui:header>": {
-        "template": "./partials/_header.marko"
+        "template": "./views/_header.marko"
     },
     "<admin>": {
-        "template": "./partials/admin/_admin.marko"
+        "template": "./views/admin/_admin.marko"
     },
     "<login>": {
-        "template": "./partials/admin/_login.marko"
+        "template": "./views/admin/_login.marko"
     },
     "tags-dir": "./tags"
 }

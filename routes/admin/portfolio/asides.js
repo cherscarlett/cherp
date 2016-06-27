@@ -1,5 +1,9 @@
-var s3 = require('../../../models/s3'); 
+var layout = require('../../../views/admin/portfolio/_asides.marko'); 
 
-module.exports = function(req, res) {
-    
+module.exports = function(req, res) { 
+    res.marko(layout, {
+        aside: {
+            url: req.query.image
+        }
+    });
 };

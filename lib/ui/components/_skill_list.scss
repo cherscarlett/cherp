@@ -326,7 +326,18 @@ $skills: html5, css3, javascript, jquery, backbone, underscore, require, gulp, s
 
         &[data-id="sql"] {
             left: 18%;
-            top: 42%; }
+            top: 42%; 
+        }
+
+        &[data-id="angular"] {
+            left: 85%;
+            top: 25%;
+        }
+
+        &[data-id="react"] {
+            left: 75%;
+            top: 89%;
+        }
 
     }
 }

@@ -2,6 +2,9 @@ if(data.type === "canvas")
     figure.animation.animation-skills
         .animation-canvas-skills.animation-canvas
             canvas#animation
+        figcaption
+            p
+                - "Is this some kind of engineery hipster art project?" "...yes."
         ul.skill-list if(notEmpty(data.skills))
             for(skill in data.skills)
                 li.skill-list-item data-id=skill.id data-strength=skill.strength data-type=skill.type data-text=skill.text tabindex="100"

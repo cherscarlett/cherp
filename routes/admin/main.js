@@ -3,7 +3,7 @@ var navItems = require('../../private/menu.json'),
     mongoose = require('mongoose');
 
 module.exports = function(req, res) { 
-    mongoose.model('portfolioItem').find({}, function (err, portfolioItems) {
+    mongoose.model('portfolioItem').find().sort({order: -1}).exec(function (err, portfolioItems) {
       mongoose.model('user').findById(req.session.passport.user, function(err, profile) {
         if (err) {
               return console.error(err);
@@ -14,7 +14,8 @@ module.exports = function(req, res) {
               navItems: navItems,
               portfolioItems: portfolioItems.reverse(),
               scripts: ['/public/javascripts/admin.js'],
-              user: profile
+              user: profile,
+              newItemInteger: portfolioItems.length + 1
             });
           }  
       });       

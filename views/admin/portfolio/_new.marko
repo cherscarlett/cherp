@@ -1,28 +1,29 @@
-.item-new
+.item-new.item data-component="new"
     form
-        .item-new-field
+        .item-field.item-new-field
             label - Title
             input name="title" placeholder="Workplace Inc" type="text"
-        .item-new-field
+        .item-field.item-new-field
             label - Location
             input name="location" placeholder="The Moon, Universe" type="text"
-        .item-new-field
+        .item-field.item-new-field
             label - Job Title
             input name="job" placeholder="Grandmaster Poobah" type="text"
-        .item-new-field
+        .item-field.item-new-field
             label - Time Spent
             input name="timespan" placeholder="400 BC - 0" type="text"
-        .item-new-field
+        .item-field.item-new-field
             label - Skills
             input name="skills" placeholder="Stackoverflow, copy/paste, etc" type="text"
-        .item-new-field
+        .item-field.item-new-field
             label - Descriptions
-            div.item-new-description
+            .item-description.item-new-description
                 input name="description_text" placeholder="Writing code" type="text"
-            a.item-new-description-more href="javascript:;" - Add another description
-        .item-new-field
+            a.item-new-description-more.item-description-more href="javascript:;" - Add another description
+        .item-field.item-new-field
             label - Asides
-            div.item-new-related
-                input type="file" accept="image/*" multiple
-        .item-new-submit
+            .item-related.item-new-related
+                input type="file" accept="image/*" multiple name="asides[]"
+        .item-submit.item-new-submit
             input.button.button-primary type="submit" value="Save"
+            input type="hidden" name="order" value=data.order

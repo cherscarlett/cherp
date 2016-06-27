@@ -9,6 +9,20 @@
 
     &-skills {
         background-image: linear-gradient(transparentize(#EDEBDE, .1), transparentize(getProperty(primary, background-color), 1));
+
+        figcaption p {
+            position: absolute;
+            bottom: -1.5rem;
+            font-size: getFontSize(xs);
+            font-style: italic;
+            opacity: .4;
+            z-index: 20;
+            right: getValue(margin, md);
+
+            @include break-point(desktop-sm) {
+                right: getValue(margin, lg);
+            }
+        }
         
         &:after {
             content: '';
@@ -172,6 +186,24 @@ $svgs: balloon, low-clouds, high-clouds, birds, mountains;
     top: 15%;
     height: getHeightFromWidth(149/150, 20vw);
     background-position: 100% 50%;
+    animation: bounceyZoom 60s infinite;
+}
+
+svg#wind {
+    animation: windScroll 60s infinite alternate;
+    opacity: .45;
+
+    .st1 {
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        fill: transparent;
+        stroke: rgba(255, 255, 255, .3);
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: wind 5s ease-in-out forwards infinite alternate;
+    }
 }
 
 // Keyframes
@@ -194,3 +226,29 @@ $svgs: balloon, low-clouds, high-clouds, birds, mountains;
     100% { transform: translate(0, 0%); }
 }
 
+@keyframes bounceyZoom {
+    0% { transform: translate(0%, 0%) scale(1); }
+    10% { transform: translate(-1%, -1%) scale(1.05); }
+    30% { transform: translate(-2%, 0%) scale(1.1); }
+    50% { transform: translate(-1%, 2%) scale(1.05); }
+    60% { transform: translate(0%, -1%) scale(1); }
+    70% { transform: translate(1%, 0%) scale(1.05); }
+    80% { transform: translate(2%, 0%) scale(1.05); }
+    90% { transform: translate(1%, 2%) scale(1); }
+    100% { transform: translate(0, 0%) scale(1); }
+}   
+
+@keyframes wind {
+    from {
+        stroke-dashoffset: 100;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes windScroll {
+    0% {  transform: translateX(0%); }
+    50% {  transform: translateX(-10%); }
+    100% {  transform: translateX(0%); }
+}

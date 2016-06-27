@@ -1,12 +1,20 @@
-var $trigger = $('.navigation-item a'),
+var $trigger = $('.navigation-item a').not('[data-id="portfolio"]'),
+    $portfolioTrigger = $('.navigation-item a[data-id="portfolio"], .navigation-item-portfolio'),
     $section,
     $menuTrigger = $('.menu'),
     $navigation = $('.navigation-footer'),
-    component = $menuTrigger.data('component');;
+    component = $menuTrigger.data('component');
 
 
 var navigationModal = new Modal({
     component: component,
+    role: 'site',
+    theme: "light"
+});
+
+var portfolioModal = new Modal({
+    component: 'navigation',
+    role: 'portfolio',
     theme: "light"
 });
 
@@ -23,6 +31,29 @@ $trigger.on("click", function(event) {
     item.path !== '/' ? item.title = "Cher Stewart | Software Engineer | " + $(this).html() : item.title = "Cher Stewart | Software Engineer";
 
     loadPartial(item);
+});
+
+$portfolioTrigger.on("click", function(event) {
+    event.preventDefault();
+
+    item = {
+        id: $(this).data('id'),
+        path: this.href,
+        section: $('section').attr('class'),
+        clicked: this
+    }
+
+    item.path !== '/' ? item.title = "Cher Stewart | Software Engineer | " + $(this).html() : item.title = "Cher Stewart | Software Engineer";
+
+    loadPartial(item);
+
+    $.get('/portfolio/list', function(data) {
+        if ($('.is-open').length) {
+            navigationModal.close();
+        }
+        portfolioModal.create(data);
+        portfolioModal.open();
+    });  
 });
 
 $menuTrigger.on("click", function(event) {

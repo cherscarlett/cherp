@@ -1,0 +1,11 @@
+.aside
+    .aside-image
+        .content style="background-image: url(${data.aside.url});"
+    .aside-data
+        .aside-title.item-field
+            label - Title
+            input name="aside_title" placeholder="poop.bike" type="text" value=data.aside.title
+        .aside-text.item-field
+            label - Text
+            input name="aside_text" placeholder="why I do this" type="text" value=data.aside.text
+        input type="hidden" name="aside_image_url" value=data.aside.url

@@ -1,0 +1,3 @@
+navigation location="portfolio" if(notEmpty(data.portfolioItems))
+    for(item in data.portfolioItems)
+        navigation:navItem id=item.slug text=item.title path="/portfolio/${item.slug}"

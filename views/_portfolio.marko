@@ -1,0 +1,28 @@
+article.portfolio-item
+    header.portfolio-item-header
+        h1.portfolio-item-title - ${data.item.title}
+        h2.portfolio-item-subtitle - ${data.item.job}
+        p.portfolio-item-location - ${data.item.location}
+        p.portfolio-item-timespan - ${data.item.timespan}
+
+    figure.portfolio-item-skills if(notEmpty(data.item.skills))
+        ul
+            for(skill in data.item.skills)
+                li - ${skill.text}
+
+    .portfolio-item-descriptions if(notEmpty(data.item.descriptions))
+        ul
+            for(description in data.item.descriptions)
+                li - ${description.text}
+
+    .asides if(notEmpty(data.item.asides))
+        h3 - Related Projects
+        aside.portfolio-item-aside.aside for(aside in data.item.asides)
+            figure.aside-image
+                .aside-image-content style="background-image: url(${aside.url});"
+                figcaption.aside-image-caption
+                    h4
+                        - ${aside.title}
+                    p
+                        - ${aside.text}
+            

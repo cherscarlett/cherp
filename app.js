@@ -13,14 +13,13 @@ var express = require('express'),
     fs = require('fs'),
     db = require('./models/db'),
     github = require('./models/github'),
-    s3 = require('./models/s3'),
     portfolioItems = require('./models/portfolioItems'),
     users = require('./models/users'),
     methodOverride = require('method-override');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
-// app.use(require('morgan')('combined'));
+
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 
 app.use(passport.initialize());
