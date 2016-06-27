@@ -112,6 +112,7 @@ h6 {
       font-size: 0.61803rem;
       font-style: italic;
       opacity: .4;
+      z-index: 20;
       right: 2.12862%; }
       @media screen and (min-width: 60em) {
         .animation-skills figcaption p {
