@@ -257,7 +257,8 @@ h6 {
   animation: bounceyZoom 60s infinite; }
 
 svg#wind {
-  animation: windScroll 60s infinite alternate; }
+  animation: windScroll 60s infinite alternate;
+  opacity: .45; }
   svg#wind .st1 {
     fill-rule: evenodd;
     clip-rule: evenodd;
