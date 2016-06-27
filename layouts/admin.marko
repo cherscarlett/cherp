@@ -22,8 +22,7 @@ html lang="en"
             if(data.activeTab === 'login')
                 login
             else
-                include('../partials/admin/_admin') portfolioItems=data.portfolioItems
-
+                include('../views/admin/_admin') portfolioItems=data.portfolioItems
 
         footer.footer
             navigation activeTab=data.activeTab location="footer" if(notEmpty(data.navItems))
@@ -36,10 +35,12 @@ html lang="en"
             footer-scripts:script path="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
             footer-scripts:script path="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"
             footer-scripts:script path="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"
+            footer-scripts:script path="https://rawgit.com/akm2/simplex-noise.js/master/simplex-noise.js"
             footer-scripts:script path="/public/javascripts/core.js"
             footer-scripts:script path="/public/javascripts/modal.js"
+            footer-scripts:script path="/public/javascripts/animation.js"
             footer-scripts:script path="/public/javascripts/navigation.js"
             for(script in data.scripts)
-                footer-scripts:script path="${script}"
+                footer-scripts:script path=script
 
         browser-refresh enabled="true"

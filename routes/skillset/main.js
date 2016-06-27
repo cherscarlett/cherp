@@ -1,6 +1,6 @@
 var navItems = require('../../private/menu.json'),
     layout = require('../../layouts/main.marko'),
-    ajax = require('../../partials/_skillset-full.marko'),
+    ajax = require('../../views/_skillset-full.marko'),
     skillsAll = require('../../private/skills.json'),
     skills = {
         all: sortSkills('all'),

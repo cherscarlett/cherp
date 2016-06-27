@@ -1,6 +1,9 @@
 .navigation {
-    overflow: auto;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
+    &:hover, &:active {
+        overflow-x: auto;
+    }
 
     &-header {
         @include border(top);
@@ -43,16 +46,6 @@
             }
         }
 
-        &-footer {
-
-            @include links {
-                color: white;
-            }
-            a:hover, a:active, a:focus {
-                color: getProperty(secondary, color);
-            }
-        }
-
     }
 
     &-modal {
@@ -63,11 +56,20 @@
                 flex-direction: column;
                 min-width: 280px;
                 padding-top: 45px;
+                
+                @include links {
+                    color: white;
+                }
+                a:hover, a:active, a:focus {
+                    color: getProperty(secondary, color);
+                }
             }
         }
 
-        @include break-point(desktop-sm) {
-            display: none!important;
+        &-site {
+            @include break-point(desktop-sm) {
+                display: none!important;
+            }   
         }
     }
 }

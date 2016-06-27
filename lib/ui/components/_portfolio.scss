@@ -1,0 +1,199 @@
+.portfolio {
+    &-item {
+        position: relative;
+        padding: 2rem getValue(margin, md);
+
+        @include break-point(tablet) {
+            @include grid(0);
+            padding: 2rem getValue(margin, md);
+        }
+
+        @include break-point(desktop-sm) {
+            padding: 2rem getValue(margin, lg);
+        }
+
+        &-header {
+            text-align: center;
+
+            @include break-point(tablet) {
+                @include column(lg, 0);
+                text-align: right;
+                direction: rtl;
+            }
+
+            @include break-point(desktop-sm) {
+                @include column(md, 0);
+                padding-right: getValue(margin, lg);
+            }
+
+            @include break-point(desktop-lg) {
+                white-space: nowrap;
+            }
+        }
+        
+        &-title {
+            color: getProperty(secondary, color);
+            text-transform: uppercase;
+            font-size: getFontSize(md);
+            line-height: getLineHeight(md);
+            word-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
+
+            @include break-point(desktop-sm) {
+
+                font-size:  getFontSize(md)*1.2;
+                line-height:  getLineHeight(md)*1.1;
+
+            }
+        }
+
+        &-subtitle {
+            font-style: italic;
+            text-transform: lowercase;    
+            font-size: getFontSize(sm);
+        }
+
+        &-subtitle, &-location, &-timespan {   
+            color: getProperty(tertiary, color);
+        }
+
+        &-location, &-timespan {
+            font-size: getFontSize(sm) * .8;
+        }
+
+        &-skills {
+            background-color: getProperty(secondary, background-color);
+            margin: 1rem 0;
+
+            @include break-point(tablet) {  
+                @include column(lg, md);
+            }
+
+            @include break-point(desktop-sm) {
+                margin-left: auto;
+                margin-top: 0;
+                margin-bottom: auto;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: .75rem 1.25rem;
+            }
+
+            li {
+                padding: .15rem .5rem;
+                color: getProperty(primary, background-color);
+                font-style: italic;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+        
+        &-descriptions {
+
+            @include break-point(tablet) {
+                @include column(lg, 0);
+            }
+
+            @include break-point(desktop-sm) {
+                margin-left: auto;
+                min-height: calc(350px + 2rem);
+                padding-top: 2rem;
+            }
+            
+            li {
+                padding-bottom: 1rem;
+            }
+        }
+
+        h3 {
+
+            font-weight: bold;
+            font-size: getFontSize(sm);
+            line-height: getLineHeight(md);
+            color: getProperty(secondary, color);
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+.asides {
+    white-space: nowrap;
+    overflow: hidden;
+    padding-bottom: 2rem;
+    -webkit-overflow-scrolling: touch;
+
+    &:hover, &:active {
+        overflow-x: auto;
+    }
+
+    @include break-point(desktop-sm) {
+        padding-top: 2rem;
+    }
+}
+
+.aside {
+    display: inline-block;
+    width: calc(100% - #{getValue(margin, md) * 4});
+    margin-right: getValue(margin, md) * 2;
+    vertical-align: top;
+
+    @include break-point(tablet) {
+        width: getValue(column, md);
+    }
+
+    @include break-point(desktop-sm) {
+        width: getValue(column, sm);
+        
+        &:nth-of-type(1) {
+            position: absolute;
+            top: 200px;
+            margin-top: 2rem;
+            margin-right: 0;
+            margin-left: getValue(margin, xxl);
+        }
+    }
+
+    &-image {
+        box-shadow: 0 0 3px 0 transparentize(getProperty(secondary, background-color), .87);
+
+        &-content {
+            width: 100%;
+            height: getHeightFromWidth(16/9, 100vw);
+            background-size: cover;
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+
+            @include break-point(tablet) {
+                height: #{getHeightFromWidth(16/9, getValue(column, md))/1%}vw;
+            }
+
+            @include break-point(desktop-sm) {
+                height: #{getHeightFromWidth(16/9, getValue(column, sm))/1%}vw;
+            }
+        }
+
+        &-caption {
+            background-color: getProperty(primary, background-color);
+            padding-top: .25rem;
+
+            h4 {
+                color: getProperty(secondary, color);
+                font-size: getFontSize(sm);
+                line-height: getLineHeight(sm);
+                text-transform: lowercase;
+                text-align: center;
+            }
+
+            p {
+                @include border(top);
+                box-shadow: inset 0 3px 3px -3px transparentize(getProperty(secondary, background-color), .7);
+                padding: 1rem getValue(margin, md);
+                white-space: normal;
+            }
+        }   
+    }
+}

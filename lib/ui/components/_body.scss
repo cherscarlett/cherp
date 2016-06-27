@@ -139,6 +139,16 @@ body {
                 font-weight: bold;
                 text-transform: uppercase;
 
+                @include links(link, visited) {
+                    color: getProperty(primary, color);
+                    border-bottom: 1px solid transparent;
+                }
+
+                @include links(hover, active) {
+                    color: getProperty(tertiary, color);
+                    border-bottom: 1px solid currentColor;
+                }
+
                 @include break-point(tablet) {
                     font-weight: normal;
                     font-size: getFontSize(md);

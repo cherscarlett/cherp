@@ -1,0 +1,6 @@
+.content.content-admin
+    h2 - Manage Resume
+    .items
+        a.admin-new href="/admin/portfolio/new" data-order=data.newItemInteger
+            - Add new item
+        include('./portfolio/_items') portfolioItems=data.portfolioItems

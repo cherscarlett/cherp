@@ -1,4 +1,5 @@
 module.exports = {
     item: require('./item'),
-    index: require('./main')
+    index: require('./main'),
+    list: require('./list')
 };

@@ -1,5 +1,7 @@
 var mongoose = require('mongoose'),
     portfolioSchema = new mongoose.Schema({ 
+        order: Number,
+        slug: String,
         title: String,
         location: String,
         job: String,
@@ -13,15 +15,8 @@ var mongoose = require('mongoose'),
         asides: [
             {
                 title: String,
-                image: {
-                    width: Number,
-                    height: Number,
-                    url: String
-
-                },
-                facts: [
-                    { text: String }
-                ]
+                url: String,
+                text: String
             }
         ]
     });

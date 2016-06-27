@@ -1,4 +1,4 @@
-var wind = require('../../partials/svg/_wind.marko');
+var wind = require('../../views/svg/_wind.marko');
 
 module.exports = function(req, res) {
 

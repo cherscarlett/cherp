@@ -14,6 +14,13 @@
     "typeShort": "ux"
   },
   {
+    "id": "xml",
+    "strength": "10",
+    "text": "XML",
+    "type": "Markup Language",
+    "typeShort": "dev"
+  },
+  {
     "id": "javascript",
     "strength": "8",
     "text": "JavaScript",
@@ -87,6 +94,20 @@
     "id": "marko",
     "strength": "7",
     "text": "Marko",
+    "type": "Templating Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "react",
+    "strength": "5",
+    "text": "React",
+    "type": "Templating Language",
+    "typeShort": "ux"
+  },
+  {
+    "id": "angular",
+    "strength": "5",
+    "text": "Angular",
     "type": "Templating Language",
     "typeShort": "ux"
   },
@@ -207,6 +228,20 @@
     "strength": "2",
     "text": "WebGL",
     "type": "3D Graphics",
+    "typeShort": "dev"
+  },
+  {
+    "id": "threejs",
+    "strength": "2",
+    "text": "three.js",
+    "type": "JavaScript Library for 3D Graphics",
+    "typeShort": "dev"
+  },
+  {
+    "id": "d3",
+    "strength": "2",
+    "text": "D3",
+    "type": "JavaScript Library for Data Visualization",
     "typeShort": "dev"
   },
   {

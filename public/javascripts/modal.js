@@ -36,7 +36,7 @@ Modal.prototype.create = function(data) {
     
     $modal.hide();
     
-    $modal.addClass('modal ' + this.options.component + '-modal');
+    $modal.addClass('modal ' + this.options.component + '-modal ' + this.options.component + '-modal-' + this.options.role);
     $modal.html(data);
     
     $('body').append($modal);
@@ -100,7 +100,7 @@ function toggleContent() {
 
 function buildOverlay() {
     this.overlay = document.createElement("div");
-    this.overlay.className = "modal-overlay modal-overlay-" + this.options.theme + " modal-overlay-" + this.options.component;
+    this.overlay.className = "modal-overlay modal-overlay-" + this.options.theme + " modal-overlay-" + this.options.component + ' modal-overlay-' + this.options.component + '-' + this.options.role;
     $(this.options.el).after(this.overlay);
     $(this.overlay).velocity("fadeIn", { duration: 200})
 }

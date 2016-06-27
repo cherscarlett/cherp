@@ -1,15 +1,43 @@
 var mongoose = require('mongoose'),
-    layout = require('../../../partials/admin/_portfolio_item.marko'); 
+    layout = require('../../../views/admin/portfolio/_item.marko'),
+    slugify = require('slugify'); 
 
 module.exports = function(req, res) { 
-    var title = req.body.title,
+    var order = req.body.order,
+        slug = slugify(req.body.title),
+        title = req.body.title,
         location = req.body.location,
         job = req.body.job,
         timespan = req.body.timespan,
         skills = req.body.skills.split(","),
         description_text = req.body.description_text,
         skillsKeyed = [],
-        descriptions = [];
+        descriptions = [],
+        asides = []
+        asideUrls = req.body.aside_image_url,
+        asideTitles = req.body.aside_title,
+        asideTexts = req.body.aside_text;
+
+    if (Array.isArray(asideUrls)) {
+        for (var x = 0; x < asideUrls.length; x++) {
+            var aside = {
+                url: asideUrls[x],
+                title: asideTitles[x],
+                text: asideTexts[x]
+            }
+
+            asides.push(aside);
+        }
+    }
+
+    else if (asideUrls.length) {
+        aside = {
+            url: asideUrls,
+            title: asideTitles,
+            text: asideTexts
+        }
+        asides.push(aside);
+    }
 
     for (var i = 0; i < skills.length; i++) {
         var skill = skills[i],
@@ -32,12 +60,15 @@ module.exports = function(req, res) {
     skills = skillsKeyed;
 
     mongoose.model('portfolioItem').create({
-        title: title,
-        location: location,
-        job: job,
-        timespan: timespan,
-        skills: skills,
-        descriptions: descriptions
+            order: order,
+            slug: slug,
+            title: title,
+            location: location,
+            job: job,
+            timespan: timespan,
+            skills: skills,
+            descriptions: descriptions,
+            asides: asides
         }, 
 
         function (err, portfolioItem) {

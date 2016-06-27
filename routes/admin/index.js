@@ -6,6 +6,7 @@ module.exports = {
         delete: require('./portfolio/delete'),
         view: require('./portfolio/view'),
         new: require('./portfolio/new'),
-        asides: require('./portfolio/asides')
+        asides: require('./portfolio/asides'),
+        upload: require('./portfolio/upload')
     }
 };

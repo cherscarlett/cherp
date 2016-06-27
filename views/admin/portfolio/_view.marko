@@ -1,0 +1,32 @@
+.item-edit.item data-component="edit" data-id=data.item.id
+    form
+        .item-field.item-edit-field
+            label - Title
+            input name="title" placeholder="Workplace Inc" type="text" value=data.item.title
+        .item-field.item-edit-field
+            label - Location
+            input name="location" placeholder="The Moon, Universe" type="text" value=data.item.location
+        .item-field.item-edit-field
+            label - Job Title
+            input name="job" placeholder="Grandmaster Poobah" type="text" value=data.item.job
+        .item-field.item-edit-field
+            label - Time Spent
+            input name="timespan" placeholder="400 BC - 0" type="text" value=data.item.timespan
+        .item-field.item-edit-field
+            label - Skills
+            input name="skills" placeholder="Stackoverflow, copy/paste, etc" type="text" value=data.item.skills
+        .item-field.item-edit-field
+            label - Descriptions
+            .item-edit-description.item-description 
+                for(description in data.item.descriptions)
+                    input name="description_text" placeholder="Writing code" type="text" value=description.text
+            a.item-edit-description-more.item-description-more href="javascript:;" - Add another description
+        .item-field.item-edit-field
+            label - Asides
+            .asides if(notEmpty(data.item.asides))
+                for(aside in data.item.asides)
+                    include('./_asides') aside=aside
+            .item-edit-related.item-related
+                input type="file" accept="image/*" multiple name="asides[]"   
+        .item-submit.item-edit-submit
+            input.button.button-primary type="submit" value="Save"

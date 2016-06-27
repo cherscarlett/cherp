@@ -61,14 +61,18 @@ $widths: (
     display: flex;
     flex-wrap: wrap;
 
-    > * {
-        flex-grow: 1;
-        padding: 0 getValue(margin, $gutter-size);
+    @if $gutter-size != 0 {
+        > * {
+            padding: 0 getValue(margin, $gutter-size);
+        }
     }
 }
 
 @mixin column($size, $gutter-size:xs) {
     box-sizing: border-box;
     width: getValue(column, $size);
-    padding: 0 getValue(margin, $gutter-size);
+
+    @if $gutter-size != 0 {
+        padding: 0 getValue(margin, $gutter-size);
+    }
 }

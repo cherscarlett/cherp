@@ -9,11 +9,13 @@
                     article
                         header
                             hgroup
-                                h1 - ${resumeItem.title}
+                                h1
+                                    a href="/portfolio/${resumeItem.slug}"
+                                        - ${resumeItem.title}
                                 h2 - ${resumeItem.job}
                             .metadata
-                                .location - ${resumeItem.location}
-                                .timespan - ${resumeItem.timespan}
+                                p.location - ${resumeItem.location}
+                                p.timespan - ${resumeItem.timespan}
                         .resume-document-content if(notEmpty(resumeItem.descriptions))
                             ul
                                 li for(description in resumeItem.descriptions)

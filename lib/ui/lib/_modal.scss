@@ -74,7 +74,7 @@
         bottom: 0;
         left: 0;
 
-        &-navigation {
+        &-navigation-site {
             @include break-point(desktop-sm) {
                 display: none!important;
             }

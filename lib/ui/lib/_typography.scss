@@ -93,7 +93,7 @@ em {
     color: getProperty(tertiary, color);
     text-decoration: none;
     border-bottom: 1px solid currentColor;
-    @include transition(color);
+    @include transition(all);
 }
 
 a:active, a:hover {
