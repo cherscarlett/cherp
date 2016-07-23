@@ -126,7 +126,7 @@
     padding-bottom: 2rem;
     -webkit-overflow-scrolling: touch;
 
-    &:hover, &:active {
+    &:hover, &:active, &:focus {
         overflow-x: auto;
     }
 

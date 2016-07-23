@@ -6,7 +6,6 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "assets-pipeline": "0.0.6",
     "aws-sdk": "^2.4.0",
     "body-parser": "^1.13.3",
     "busboy": "^0.2.13",
@@ -20,7 +19,7 @@
     "gm": "^1.22.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-sass": "^2.3.1",
-    "jade": "~1.11.0",
+    "letsencrypt-express": "^1.1.5",
     "method-override": "^2.3.6",
     "mongodb": "^2.1.18",
     "mongoose": "^4.5.0",
@@ -29,7 +28,6 @@
     "passport-github": "^1.1.0",
     "serve-favicon": "~2.3.0",
     "serve-static": "^1.11.0",
-    "slugify": "^0.1.1",
-    "time-uuid": "^1.0.0"
+    "slugify": "^0.1.1"
   }
 }

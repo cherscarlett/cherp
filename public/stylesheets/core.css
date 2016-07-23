@@ -980,7 +980,7 @@ section {
   overflow: hidden;
   padding-bottom: 2rem;
   -webkit-overflow-scrolling: touch; }
-  .asides:hover, .asides:active {
+  .asides:hover, .asides:active, .asides:focus {
     overflow-x: auto; }
   @media screen and (min-width: 60em) {
     .asides {
