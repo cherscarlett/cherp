@@ -13,10 +13,5 @@
     "id": "resume",
     "path": "/resume",
     "text": "Resume"
-  },
-  {
-    "id": "portfolio",
-    "path": "/portfolio",
-    "text": "Portfolio"
   }
 ]

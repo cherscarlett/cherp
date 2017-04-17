@@ -106,7 +106,7 @@
   },
   {
     "id": "angular",
-    "strength": "5",
+    "strength": "8",
     "text": "Angular",
     "type": "Templating Language",
     "typeShort": "ux"
@@ -133,9 +133,9 @@
     "typeShort": "ux"
   },
   {
-    "id": "mako",
-    "strength": "5",
-    "text": "Mako",
+    "id": "vue",
+    "strength": "8",
+    "text": "Vue.js",
     "type": "Templating Language",
     "typeShort": "ux"
   },
@@ -162,14 +162,14 @@
   },
   {
     "id": "java",
-    "strength": "4",
-    "text": "JAVA",
+    "strength": "7",
+    "text": "Java",
     "type": "OO Programming Language",
     "typeShort": "server"
   },
   {
     "id": "node",
-    "strength": "6",
+    "strength": "8",
     "text": "NodeJS",
     "type": "I/O JavaScript Platform",
     "typeShort": "server"
@@ -183,7 +183,7 @@
   },
   {
     "id": "groovy",
-    "strength": "4",
+    "strength": "7",
     "text": "Groovy",
     "type": "OO Programming Language",
     "typeShort": "server"
@@ -242,6 +242,27 @@
     "strength": "2",
     "text": "D3",
     "type": "JavaScript Library for Data Visualization",
+    "typeShort": "dev"
+  },
+  {
+    "id": "compnuer",
+    "strength": "2",
+    "text": "Computational Neuroscience",
+    "type": "Building neural networks in Python",
+    "typeShort": "dev"
+  },
+  {
+    "id": "machlearn",
+    "strength": "2",
+    "text": "Machine Learning",
+    "type": "Building algorithms to detect behavior, and adjust functionality.",
+    "typeShort": "dev"
+  },
+  {
+    "id": "ai",
+    "strength": "2",
+    "text": "Artificial Intelligence",
+    "type": "Building algorithms to anticipate behavior.",
     "typeShort": "dev"
   },
   {

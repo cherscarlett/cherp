@@ -78,7 +78,7 @@ module.exports = function (router) {
     router({
       path: "/login/return",
       name: "loginReturn"
-    }).get(passport.authenticate('github', { failureRedirect: '/login' }), 
+    }).get(passport.authenticate('github', { failureRedirect: '/login' }),
         function(req,res) {
           res.redirect('/admin');
         });

@@ -9,9 +9,7 @@
                     article
                         header
                             hgroup
-                                h1
-                                    a href="/portfolio/${resumeItem.slug}"
-                                        - ${resumeItem.title}
+                                h1 - ${resumeItem.title}
                                 h2 - ${resumeItem.job}
                             .metadata
                                 p.location - ${resumeItem.location}
@@ -20,4 +18,3 @@
                             ul
                                 li for(description in resumeItem.descriptions)
                                    p - ${description.text}
-            

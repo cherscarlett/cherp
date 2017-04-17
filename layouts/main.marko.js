@@ -13,7 +13,6 @@ function create(__helpers) {
       views__about = loadTemplate(require.resolve("../views/_about.marko")),
       views__skillset_full = loadTemplate(require.resolve("../views/_skillset-full")),
       views__resume = loadTemplate(require.resolve("../views/_resume")),
-      views__portfolio = loadTemplate(require.resolve("../views/_portfolio")),
       views__footer = loadTemplate(require.resolve("../views/_footer.marko")),
       footer_scripts = __loadTag(require("../tags/footer-scripts/renderer"), 0, 0, 1),
       footer_scripts_script = __loadTag(null, "scripts", 1);
@@ -57,12 +56,6 @@ function create(__helpers) {
     if (data.activeTab === "resume") {
       views__resume.render({
           resumes: data.resumes
-        }, out);
-    }
-
-    if (data.activeTab === "portfolio") {
-      views__portfolio.render({
-          item: data.item
         }, out);
     }
 
