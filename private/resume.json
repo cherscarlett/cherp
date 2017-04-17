@@ -3,6 +3,20 @@
     "type": "educators",
     "resumeItems": [
         {
+            "title": "Udacity",
+            "job": "Artificial Intelligence, Deep Learning, & Machine Learning",
+            "location": "Remote",
+            "timespan": "February 2017 - Present",
+            "descriptions": []
+        },
+        {
+            "title": "University of Washington",
+            "job": "Data Science",
+            "location": "Remote",
+            "timespan": "October 2016 - January 2017",
+            "descriptions": []
+        },
+        {
             "title": "University of Missouri",
             "job": "Physics & Astronomy",
             "location": "Saint Louis, MO",
@@ -12,7 +26,7 @@
         {
             "title": "Academy of Art",
             "job": "Photography & Web Design",
-            "location": "Seattle, WA",
+            "location": "Remote",
             "timespan": "September 2005 - May 2007",
             "descriptions": []
         }
