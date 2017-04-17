@@ -2,7 +2,7 @@
 
 html lang="en"
     head
-        title 
+        title
             - ${data.title}
         link rel="stylesheet" type="text/css" href="/public/stylesheets/core.css"
         link rel="icon" href="/public/favicon.png" sizes="64x64" type="image/png"
@@ -29,9 +29,6 @@ html lang="en"
 
             if(data.activeTab === 'resume')
                 include('../views/_resume') resumes=data.resumes
-
-            if(data.activeTab === 'portfolio')
-                include('../views/_portfolio') item=data.item
 
         footer.footer
             navigation activeTab=data.activeTab location="footer" if(notEmpty(data.navItems))
