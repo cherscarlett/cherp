@@ -567,6 +567,36 @@ body {
         .content-resume .resume-document-content {
           padding-left: 3.44419%;
           padding-right: 3.44419%; } }
+    .content-resume .resume-document-skills {
+      background-color: #010f0a;
+      margin: 1rem 0;
+      padding: 0.5rem 1.31556%; }
+      .content-resume .resume-document-skills ul {
+        border-left: none;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        padding: .75rem 1.25rem; }
+        @media screen and (min-width: 40em) {
+          .content-resume .resume-document-skills ul {
+            border-left: 2px solid #cfefd2;
+            border-left: none; } }
+      @media screen and (min-width: 40em) {
+        .content-resume .resume-document-skills {
+          padding-left: 2.12862%;
+          padding-right: 2.12862%; } }
+      @media screen and (min-width: 60em) {
+        .content-resume .resume-document-skills {
+          padding-left: 3.44419%;
+          padding-right: 3.44419%; } }
+      .content-resume .resume-document-skills li {
+        padding: .15rem .5rem;
+        color: white;
+        font-style: italic;
+        -webkit-font-smoothing: antialiased; }
 
 section {
   max-width: 60em;
@@ -606,6 +636,9 @@ section {
 .navigation {
   overflow: hidden;
   -webkit-overflow-scrolling: touch; }
+  @media print {
+    .navigation {
+      display: none; } }
   .navigation:hover, .navigation:active {
     overflow-x: auto; }
   .navigation-header {
@@ -1038,6 +1071,9 @@ section {
   position: relative;
   color: white;
   min-width: 320px; }
+  @media print {
+    .footer {
+      display: none; } }
   .footer-content {
     max-width: 60em;
     padding: 2.12862%;

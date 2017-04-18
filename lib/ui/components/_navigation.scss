@@ -1,4 +1,8 @@
 .navigation {
+    @media print {
+        display: none;
+    }
+
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     &:hover, &:active {
@@ -56,7 +60,7 @@
                 flex-direction: column;
                 min-width: 280px;
                 padding-top: 45px;
-                
+
                 @include links {
                     color: white;
                 }
@@ -69,7 +73,7 @@
         &-site {
             @include break-point(desktop-sm) {
                 display: none!important;
-            }   
+            }
         }
     }
 }

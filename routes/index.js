@@ -31,20 +31,20 @@ module.exports = function (router) {
         name: "resume"
       }).get(resumeRoute.index);
 
-    router({
-        path: "/portfolio",
-        name: "portfolio"
-      }).get(portfolioRoute.index);
-
-    router({
-        path: "/portfolio/list",
-        name: "portfolioList"
-      }).get(portfolioRoute.list);
-
-    router({
-        path: "/portfolio/:slug",
-        name: "portfolioItem"
-      }).get(portfolioRoute.item);
+    // router({
+    //     path: "/portfolio",
+    //     name: "portfolio"
+    //   }).get(portfolioRoute.index);
+    //
+    // router({
+    //     path: "/portfolio/list",
+    //     name: "portfolioList"
+    //   }).get(portfolioRoute.list);
+    //
+    // router({
+    //     path: "/portfolio/:slug",
+    //     name: "portfolioItem"
+    //   }).get(portfolioRoute.item);
 
     router({
       path: "/animation",
