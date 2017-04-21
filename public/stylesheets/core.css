@@ -602,7 +602,8 @@ section {
   max-width: 60em;
   min-width: 320px;
   -ms-flex-positive: 1;
-  flex-grow: 1; }
+  flex-grow: 1;
+  width: 100%; }
   @media screen and (min-width: 60em) {
     section {
       margin: auto;

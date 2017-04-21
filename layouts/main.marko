@@ -20,7 +20,7 @@ html lang="en"
                 for(navItem in data.navItems)
                     navigation:navItem id=navItem.id text=navItem.text path=navItem.path
 
-        section class=data.activeTab
+        section class=data.activeTab class="about"
             if(data.activeTab === 'about')
                 about
 
@@ -29,6 +29,10 @@ html lang="en"
 
             if(data.activeTab === 'resume')
                 include('../views/_resume') resumes=data.resumes
+
+            if(data.error)
+                include ('../views/_error') error=data.error
+
 
         footer.footer
             navigation activeTab=data.activeTab location="footer" if(notEmpty(data.navItems))

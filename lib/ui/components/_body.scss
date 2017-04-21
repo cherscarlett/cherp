@@ -245,6 +245,7 @@ section {
     max-width: map-get($screen-sizes, desktop-sm);
     min-width: 320px;
     flex-grow: 1;
+    width: 100%;
 
     @include break-point(desktop-sm) {
         margin: auto;
