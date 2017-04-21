@@ -1,6 +1,6 @@
 body {
     background: getProperty(primary, background-color) url('#{$image-folder}bg.png') 50% 50% repeat;
-    background-size: 360px 360px; 
+    background-size: 360px 360px;
     color: getProperty(primary, color);
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@ body {
                     }
                 }
 
-                hgroup, .metadata {  
+                hgroup, .metadata {
 
                     text-align: center;
 
@@ -200,6 +200,43 @@ body {
                     padding-right: getValue(margin, lg);
                 }
             }
+
+            &-skills {
+                background-color: getProperty(secondary, background-color);
+                margin: 1rem 0;
+
+                padding: .5rem getValue(margin, sm);
+
+                ul {
+                    border-left: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    padding: .75rem 1.25rem;
+
+                    @include break-point(tablet) {
+                        border-left: 2px solid getProperty(primary, border-color);
+                        border-left: none;
+                    }
+                }
+
+                @include break-point(tablet) {
+                    padding-left: getValue(margin, md);
+                    padding-right: getValue(margin, md);
+                }
+
+                @include break-point(desktop-sm) {
+                    padding-left: getValue(margin, lg);
+                    padding-right: getValue(margin, lg);
+                }
+
+                li {
+                    padding: .15rem .5rem;
+                    color: getProperty(primary, background-color);
+                    font-style: italic;
+                    -webkit-font-smoothing: antialiased;
+                }
+            }
         }
     }
 }
@@ -214,4 +251,3 @@ section {
         padding: 0 getValue(margin, md);
     }
 }
-

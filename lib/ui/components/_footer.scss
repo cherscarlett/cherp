@@ -1,4 +1,8 @@
 .footer {
+    @media print {
+        display: none;
+    }
+
     @include border(top);
     background: getProperty(secondary, background-color);
     position: relative;
@@ -50,10 +54,10 @@
         @include transition(all);
         background-color: transparent;
         filter: drop-shadow(0 6px 10px transparentize(black, .2));
-        
+
         span {
-            text-indent: -10000px; 
-            display: block;  
+            text-indent: -10000px;
+            display: block;
         }
 
         &:before {
@@ -96,7 +100,7 @@
             .#{$icon} {
                 margin-right: 6px;
             }
-            
+
         }
 
         .github {

@@ -18,3 +18,7 @@
                             ul
                                 li for(description in resumeItem.descriptions)
                                    p - ${description.text}
+                        .resume-document-skills if(notEmpty(resumeItem.skills))
+                            ul
+                                for(skill in resumeItem.skills)
+                                    li - ${skill.text}
