@@ -1,0 +1,30 @@
+[
+    {
+        "code": 400,
+        "definition": "Bad Request"
+    },
+    {
+        "code": 404,
+        "definition": "Not Found"
+    },
+    {
+        "code": 401,
+        "definition": "Unauthorized"
+    },
+    {
+        "code": 403,
+        "definition": "Forbidden"
+    },
+    {
+        "code": 405,
+        "definition": "Method Not Allowed"
+    },
+    {
+        "code": 408,
+        "definition": "Request Timed Out"
+    },
+    {
+        "code": 500,
+        "definition": "Internal Server Error"
+    }
+]

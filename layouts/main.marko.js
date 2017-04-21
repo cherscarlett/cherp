@@ -9,10 +9,10 @@ function create(__helpers) {
       navigation = __loadTag(require("../tags/navigation/renderer"), 0, 0, 1),
       forEach = __helpers.f,
       navigation_navItem = __loadTag(null, "navItems", 1),
-      classAttr = __helpers.ca,
       views__about = loadTemplate(require.resolve("../views/_about.marko")),
       views__skillset_full = loadTemplate(require.resolve("../views/_skillset-full")),
       views__resume = loadTemplate(require.resolve("../views/_resume")),
+      views__error = loadTemplate(require.resolve("../views/_error")),
       views__footer = loadTemplate(require.resolve("../views/_footer.marko")),
       footer_scripts = __loadTag(require("../tags/footer-scripts/renderer"), 0, 0, 1),
       footer_scripts_script = __loadTag(null, "scripts", 1);
@@ -39,9 +39,7 @@ function create(__helpers) {
       });
     }
 
-    out.w("</header><section" +
-      classAttr(data.activeTab) +
-      ">");
+    out.w("</header><section class=\"about\">");
 
     if (data.activeTab === "about") {
       views__about.render({}, out);
@@ -56,6 +54,12 @@ function create(__helpers) {
     if (data.activeTab === "resume") {
       views__resume.render({
           resumes: data.resumes
+        }, out);
+    }
+
+    if (data.error) {
+      views__error.render({
+          error: data.error
         }, out);
     }
 

@@ -2,6 +2,7 @@ var homeRoute = require("./home"),
     skillsetRoute = require("./skillset"),
     resumeRoute = require("./resume"),
     portfolioRoute = require("./portfolio"),
+    errorRoute = require("./error"),
     adminRoute = require("./admin"),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
@@ -107,5 +108,10 @@ module.exports = function (router) {
     router.post("/admin/portfolio/update/:id", ensureAuthenticated, adminRoute.portfolio.update);
     router.post("/admin/portfolio/create/", ensureAuthenticated, adminRoute.portfolio.create);
     router.delete("/admin/portfolio/delete/:id", ensureAuthenticated, adminRoute.portfolio.delete);
+
+    router({
+      path: "/:error",
+      name: "viewError"
+    }).get(errorRoute.index);
 
 };
